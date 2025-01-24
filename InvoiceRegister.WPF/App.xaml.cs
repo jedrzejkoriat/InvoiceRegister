@@ -1,5 +1,7 @@
 ﻿using InvoiceRegister.EntityFramework;
 using InvoiceRegister.WPF.Factories;
+using InvoiceRegister.WPF.Interfaces.Repositories;
+using InvoiceRegister.WPF.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Configuration;
@@ -10,9 +12,12 @@ namespace InvoiceRegister.WPF
 {
 	public partial class App : Application
 	{
-		protected override void OnStartup(StartupEventArgs e)
+		protected override async void OnStartup(StartupEventArgs e)
 		{
 			IServiceProvider serviceProvider = CreateServiceProvider();
+
+			MainWindow mainWindow = serviceProvider.GetRequiredService<MainWindow>();
+			mainWindow.Show();
 
 			base.OnStartup(e);
 		}
@@ -25,6 +30,8 @@ namespace InvoiceRegister.WPF
 			options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=InvoiceRegister;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False"));
 
 			services.AddScoped<IWindowFactory, WindowFactory>();
+
+			services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 			return services.BuildServiceProvider();
 		}

@@ -34,21 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 215,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\App.xaml.cs",
-              "RelativeDocumentMoniker": "InvoiceRegister.WPF\\App.xaml.cs",
-              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\App.xaml.cs",
-              "RelativeToolTip": "InvoiceRegister.WPF\\App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T21:43:06.022Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
@@ -67,6 +54,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\App.xaml.cs",
+              "RelativeDocumentMoniker": "InvoiceRegister.WPF\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\App.xaml.cs",
+              "RelativeToolTip": "InvoiceRegister.WPF\\App.xaml.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAuwA4AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-24T21:43:06.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Data\\Payment.cs",
@@ -75,8 +75,7 @@
               "RelativeToolTip": "InvoiceRegister.EntityFramework\\Data\\Payment.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T21:17:17.301Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T21:17:17.301Z"
             },
             {
               "$type": "Document",
@@ -88,8 +87,7 @@
               "RelativeToolTip": "InvoiceRegister.EntityFramework\\Data\\InvoiceItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T21:17:12.662Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T21:17:12.662Z"
             },
             {
               "$type": "Document",
@@ -101,8 +99,7 @@
               "RelativeToolTip": "InvoiceRegister.EntityFramework\\Data\\Invoice.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T21:17:05.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T21:17:05.612Z"
             },
             {
               "$type": "Document",
@@ -114,8 +111,7 @@
               "RelativeToolTip": "InvoiceRegister.EntityFramework\\Data\\Client.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T21:15:16.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T21:15:16.644Z"
             },
             {
               "$type": "Document",
@@ -127,8 +123,7 @@
               "RelativeToolTip": "InvoiceRegister.EntityFramework\\AppDbContext.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAswBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T20:56:25.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T20:56:25.186Z"
             }
           ]
         }
