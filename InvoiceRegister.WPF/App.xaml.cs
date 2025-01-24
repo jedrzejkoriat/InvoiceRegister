@@ -1,4 +1,5 @@
 ﻿using InvoiceRegister.EntityFramework;
+using InvoiceRegister.WPF.Factories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Configuration;
@@ -22,6 +23,8 @@ namespace InvoiceRegister.WPF
 
 			services.AddDbContext<AppDbContext>(options =>
 			options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=InvoiceRegister;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False"));
+
+			services.AddScoped<IWindowFactory, WindowFactory>();
 
 			return services.BuildServiceProvider();
 		}
