@@ -1,0 +1,15 @@
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\bin\Debug\net8.0\InvoiceRegister.EntityFramework.deps.json
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\bin\Debug\net8.0\InvoiceRegister.EntityFramework.runtimeconfig.json
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\bin\Debug\net8.0\InvoiceRegister.EntityFramework.dll
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\bin\Debug\net8.0\InvoiceRegister.EntityFramework.pdb
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\obj\Debug\net8.0\InvoiceRegister.EntityFramework.csproj.AssemblyReference.cache
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\obj\Debug\net8.0\InvoiceRegister.EntityFramework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\obj\Debug\net8.0\InvoiceRegister.EntityFramework.AssemblyInfoInputs.cache
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\obj\Debug\net8.0\InvoiceRegister.EntityFramework.AssemblyInfo.cs
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\obj\Debug\net8.0\InvoiceRegister.EntityFramework.csproj.CoreCompileInputs.cache
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\obj\Debug\net8.0\InvoiceRegister.EntityFramework.sourcelink.json
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\obj\Debug\net8.0\InvoiceRegister.EntityFramework.dll
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\obj\Debug\net8.0\refint\InvoiceRegister.EntityFramework.dll
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\obj\Debug\net8.0\InvoiceRegister.EntityFramework.pdb
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\obj\Debug\net8.0\InvoiceRegister.EntityFramework.genruntimeconfig.cache
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.EntityFramework\obj\Debug\net8.0\ref\InvoiceRegister.EntityFramework.dll
