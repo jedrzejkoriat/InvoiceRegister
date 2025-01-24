@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceRegister.EntityFramework", "InvoiceRegister.EntityFramework\InvoiceRegister.EntityFramework.csproj", "{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceRegister.WPF", "InvoiceRegister.WPF\InvoiceRegister.WPF.csproj", "{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
