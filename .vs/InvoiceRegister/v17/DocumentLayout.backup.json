@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.wpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|solutionrelative:invoiceregister.wpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.entityframework\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|solutionrelative:invoiceregister.entityframework\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.entityframework\\data\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|solutionrelative:invoiceregister.entityframework\\data\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.entityframework\\data\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|solutionrelative:invoiceregister.entityframework\\data\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.entityframework\\data\\invoiceitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|solutionrelative:invoiceregister.entityframework\\data\\invoiceitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.entityframework\\data\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|solutionrelative:invoiceregister.entityframework\\data\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,71 +35,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\App.xaml.cs",
-              "RelativeDocumentMoniker": "InvoiceRegister.WPF\\App.xaml.cs",
-              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\App.xaml.cs",
-              "RelativeToolTip": "InvoiceRegister.WPF\\App.xaml.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBwAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T21:43:06.022Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Payment.cs",
-              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Data\\Payment.cs",
-              "RelativeDocumentMoniker": "InvoiceRegister.EntityFramework\\Data\\Payment.cs",
-              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Data\\Payment.cs",
-              "RelativeToolTip": "InvoiceRegister.EntityFramework\\Data\\Payment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T21:17:17.301Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InvoiceItem.cs",
-              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Data\\InvoiceItem.cs",
-              "RelativeDocumentMoniker": "InvoiceRegister.EntityFramework\\Data\\InvoiceItem.cs",
-              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Data\\InvoiceItem.cs",
-              "RelativeToolTip": "InvoiceRegister.EntityFramework\\Data\\InvoiceItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T21:17:12.662Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Invoice.cs",
-              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Data\\Invoice.cs",
-              "RelativeDocumentMoniker": "InvoiceRegister.EntityFramework\\Data\\Invoice.cs",
-              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Data\\Invoice.cs",
-              "RelativeToolTip": "InvoiceRegister.EntityFramework\\Data\\Invoice.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T21:17:05.612Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Client.cs",
-              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Data\\Client.cs",
-              "RelativeDocumentMoniker": "InvoiceRegister.EntityFramework\\Data\\Client.cs",
-              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Data\\Client.cs",
-              "RelativeToolTip": "InvoiceRegister.EntityFramework\\Data\\Client.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T21:15:16.644Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\AppDbContext.cs",
               "RelativeDocumentMoniker": "InvoiceRegister.EntityFramework\\AppDbContext.cs",

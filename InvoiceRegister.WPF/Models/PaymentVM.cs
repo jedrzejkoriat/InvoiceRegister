@@ -8,7 +8,7 @@ namespace InvoiceRegister.WPF.Models
 {
 	public class PaymentVM
 	{
-		public int Id { get; set; }
+		public int? Id { get; set; }
 		public int InvoiceId { get; set; }
 		public DateTime PaymentDate { get; set; }
 	}

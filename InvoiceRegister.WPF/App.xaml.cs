@@ -1,4 +1,6 @@
-﻿using InvoiceRegister.EntityFramework;
+﻿using AutoMapper;
+using InvoiceRegister.EntityFramework;
+using InvoiceRegister.WPF.Configurations;
 using InvoiceRegister.WPF.Factories;
 using InvoiceRegister.WPF.Interfaces.Repositories;
 using InvoiceRegister.WPF.Repositories;
@@ -32,6 +34,8 @@ namespace InvoiceRegister.WPF
 			services.AddScoped<IWindowFactory, WindowFactory>();
 
 			services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+			services.AddAutoMapper(typeof(MapperConfig));
 
 			return services.BuildServiceProvider();
 		}
