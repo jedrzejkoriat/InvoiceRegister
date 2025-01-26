@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Migrations\\20250126175727_AddSeedConfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:InvoiceRegister.EntityFramework\\Migrations\\20250126175727_AddSeedConfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.entityframework\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|solutionrelative:invoiceregister.entityframework\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.wpf\\models\\paymentvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|solutionrelative:invoiceregister.wpf\\models\\paymentvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.wpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|solutionrelative:invoiceregister.wpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,12 +47,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20250126175727_AddSeedConfigurations.cs",
+              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Migrations\\20250126175727_AddSeedConfigurations.cs",
+              "RelativeDocumentMoniker": "InvoiceRegister.EntityFramework\\Migrations\\20250126175727_AddSeedConfigurations.cs",
+              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Migrations\\20250126175727_AddSeedConfigurations.cs",
+              "RelativeToolTip": "InvoiceRegister.EntityFramework\\Migrations\\20250126175727_AddSeedConfigurations.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T17:57:27.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaymentVM.cs",
+              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Models\\PaymentVM.cs",
+              "RelativeDocumentMoniker": "InvoiceRegister.WPF\\Models\\PaymentVM.cs",
+              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Models\\PaymentVM.cs",
+              "RelativeToolTip": "InvoiceRegister.WPF\\Models\\PaymentVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T17:38:51.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\App.xaml.cs",
+              "RelativeDocumentMoniker": "InvoiceRegister.WPF\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\App.xaml.cs",
+              "RelativeToolTip": "InvoiceRegister.WPF\\App.xaml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T17:36:14.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\AppDbContext.cs",
               "RelativeDocumentMoniker": "InvoiceRegister.EntityFramework\\AppDbContext.cs",
               "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\AppDbContext.cs",
               "RelativeToolTip": "InvoiceRegister.EntityFramework\\AppDbContext.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAswBoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswBgAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-24T20:56:25.186Z",
               "EditorCaption": ""

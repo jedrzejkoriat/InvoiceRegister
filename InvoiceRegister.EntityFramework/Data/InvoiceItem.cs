@@ -12,7 +12,7 @@ namespace InvoiceRegister.EntityFramework.Data
 		public int InvoiceId { get; set; }
 		public string Name { get; set; }
 		public int Amount { get; set; }
-		public decimal UnitPrice { get; set; }
-		public decimal VAT { get; set; }
+		public decimal Price { get; set; }
+		public int VAT { get; set; }
 	}
 }

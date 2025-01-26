@@ -53,6 +53,158 @@ namespace InvoiceRegister.EntityFramework.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Clients");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            City = "Warszawa",
+                            NIP = "0123456789",
+                            Name = "Firma A",
+                            PostCode = "02-691",
+                            Street = "Cybernetyki 5"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            City = "Kraków",
+                            NIP = "9876543210",
+                            Name = "Firma B",
+                            PostCode = "31-021",
+                            Street = "Floriańska 12"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            City = "Gdańsk",
+                            NIP = "1234567891",
+                            Name = "Firma C",
+                            PostCode = "80-831",
+                            Street = "Długa 32"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            City = "Wrocław",
+                            NIP = "2345678901",
+                            Name = "Firma D",
+                            PostCode = "50-066",
+                            Street = "Świdnicka 15"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            City = "Poznań",
+                            NIP = "3456789012",
+                            Name = "Firma E",
+                            PostCode = "61-888",
+                            Street = "Półwiejska 20"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            City = "Łódź",
+                            NIP = "4567890123",
+                            Name = "Firma F",
+                            PostCode = "90-009",
+                            Street = "Piotrkowska 76"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            City = "Katowice",
+                            NIP = "5678901234",
+                            Name = "Firma G",
+                            PostCode = "40-095",
+                            Street = "Stawowa 10"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            City = "Lublin",
+                            NIP = "6789012345",
+                            Name = "Firma H",
+                            PostCode = "20-002",
+                            Street = "Krakowskie Przedmieście 5"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            City = "Szczecin",
+                            NIP = "7890123456",
+                            Name = "Firma I",
+                            PostCode = "70-001",
+                            Street = "Aleja Niepodległości 4"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            City = "Bydgoszcz",
+                            NIP = "8901234567",
+                            Name = "Firma J",
+                            PostCode = "85-009",
+                            Street = "Dworcowa 25"
+                        });
+                });
+
+            modelBuilder.Entity("InvoiceRegister.EntityFramework.Data.CompanyService", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("VAT")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CompanyServices");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Usługa 1",
+                            Price = 5000m,
+                            VAT = 23
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Usługa 2",
+                            Price = 7000m,
+                            VAT = 8
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Usługa 3",
+                            Price = 3500m,
+                            VAT = 5
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Usługa 4",
+                            Price = 1500m,
+                            VAT = 0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Usługa 5",
+                            Price = 3000m,
+                            VAT = 23
+                        });
                 });
 
             modelBuilder.Entity("InvoiceRegister.EntityFramework.Data.Invoice", b =>
@@ -105,11 +257,11 @@ namespace InvoiceRegister.EntityFramework.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("UnitPrice")
+                    b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("VAT")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("VAT")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

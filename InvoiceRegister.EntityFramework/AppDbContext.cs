@@ -1,4 +1,5 @@
-﻿using InvoiceRegister.EntityFramework.Data;
+﻿using InvoiceRegister.EntityFramework.Configurations;
+using InvoiceRegister.EntityFramework.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,9 @@ namespace InvoiceRegister.EntityFramework
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
+			modelBuilder.ApplyConfiguration(new ClientSeedConfiguration());
+			modelBuilder.ApplyConfiguration(new CompanyServiceSeedConfiguration());
+
 			base.OnModelCreating(modelBuilder);
 		}
 
@@ -21,6 +25,7 @@ namespace InvoiceRegister.EntityFramework
 		DbSet<Invoice> Invoices { get; set; }
 		DbSet<InvoiceItem> InvoiceItems { get; set; }
 		DbSet<Payment> Payments { get; set; }
+		DbSet<CompanyService> CompanyServices { get; set; }
 
 	}
 }
