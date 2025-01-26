@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using InvoiceRegister.WPF.Factories;
+using InvoiceRegister.WPF.ViewModels;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,8 +18,17 @@ namespace InvoiceRegister.WPF
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		public MainWindow()
+		private readonly MainWindowVM mainWindowVM;
+
+		public MainWindow(MainWindowVM mainWindowVM, IWindowFactory windowFactory)
 		{
+			this.mainWindowVM = mainWindowVM;
+			DataContext = this.mainWindowVM;
+		}
+
+		public async Task InitializeAsync()
+		{
+			await this.mainWindowVM.InitializeAsync();
 			InitializeComponent();
 		}
 	}

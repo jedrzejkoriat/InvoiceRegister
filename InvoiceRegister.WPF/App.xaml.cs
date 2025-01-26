@@ -4,6 +4,7 @@ using InvoiceRegister.WPF.Configurations;
 using InvoiceRegister.WPF.Factories;
 using InvoiceRegister.WPF.Interfaces.Repositories;
 using InvoiceRegister.WPF.Repositories;
+using InvoiceRegister.WPF.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Configuration;
@@ -31,11 +32,15 @@ namespace InvoiceRegister.WPF
 			services.AddDbContext<AppDbContext>(options =>
 			options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=InvoiceRegister;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False"));
 
+			services.AddAutoMapper(typeof(MapperConfig));
+
 			services.AddScoped<IWindowFactory, WindowFactory>();
 
 			services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
-			services.AddAutoMapper(typeof(MapperConfig));
+			services.AddTransient<MainWindowVM>();
+			services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainWindowVM>(), s.GetRequiredService<IWindowFactory>()));
+
 
 			return services.BuildServiceProvider();
 		}
