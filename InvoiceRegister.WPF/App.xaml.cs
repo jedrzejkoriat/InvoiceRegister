@@ -20,27 +20,34 @@ namespace InvoiceRegister.WPF
 			IServiceProvider serviceProvider = CreateServiceProvider();
 
 			MainWindow mainWindow = serviceProvider.GetRequiredService<MainWindow>();
+			// Window initialization for asynchronus operations
+			await mainWindow.InitializeAsync();
 			mainWindow.Show();
 
 			base.OnStartup(e);
 		}
 
+		// Depencency Injection configuration
 		private IServiceProvider CreateServiceProvider()
 		{
 			IServiceCollection services = new ServiceCollection();
 
+			// Db context configuration
 			services.AddDbContext<AppDbContext>(options =>
 			options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=InvoiceRegister;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False"));
 
+			// Automapper
 			services.AddAutoMapper(typeof(MapperConfig));
 
+			// Window factory
 			services.AddScoped<IWindowFactory, WindowFactory>();
 
+			// Repositories
 			services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
+			// Views and ViewModels
 			services.AddTransient<MainWindowVM>();
 			services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainWindowVM>(), s.GetRequiredService<IWindowFactory>()));
-
 
 			return services.BuildServiceProvider();
 		}
