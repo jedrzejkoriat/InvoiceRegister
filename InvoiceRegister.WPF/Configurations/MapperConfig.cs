@@ -17,6 +17,7 @@ namespace InvoiceRegister.WPF.Configurations
 			CreateMap<Invoice, InvoiceVM>().ReverseMap();
 			CreateMap<InvoiceItem, InvoiceVM>().ReverseMap();
 			CreateMap<Payment, PaymentVM>().ReverseMap();
+			CreateMap<CompanyService, CompanyServiceVM>().ReverseMap();
 		}
 	}
 }

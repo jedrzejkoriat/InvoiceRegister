@@ -8,7 +8,7 @@ namespace InvoiceRegister.EntityFramework.Data
 {
 	public class Invoice
 	{
-		public int Id { get; set; }
+		public int? Id { get; set; }
 		public int ClientId { get; set; }
 		public string InvoiceNumber { get; set; }
 		public DateTime IssueDate { get; set; }

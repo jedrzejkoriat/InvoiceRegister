@@ -28,5 +28,10 @@ namespace InvoiceRegister.WPF
 			await this.mainWindowVM.InitializeAsync();
 			InitializeComponent();
 		}
+
+		public async void OpenInvoiceDetails_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
 	}
 }

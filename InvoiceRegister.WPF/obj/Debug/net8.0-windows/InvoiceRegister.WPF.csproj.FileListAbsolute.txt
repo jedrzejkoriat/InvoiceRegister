@@ -44,11 +44,9 @@ C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceR
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\InvoiceRegister.EntityFramework.dll
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\InvoiceRegister.EntityFramework.pdb
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\InvoiceRegister.WPF.csproj.AssemblyReference.cache
-C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\InvoiceRegister.WPF_MarkupCompile.cache
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\InvoiceRegister.WPF_MarkupCompile.lref
-C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\InvoiceRegister.WPF.g.resources
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\InvoiceRegister.WPF.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\InvoiceRegister.WPF.AssemblyInfoInputs.cache
@@ -61,3 +59,5 @@ C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceR
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\InvoiceRegister.WPF.pdb
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\InvoiceRegister.WPF.genruntimeconfig.cache
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\ref\InvoiceRegister.WPF.dll
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\Views\MainWindow.g.cs
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\Views\MainWindow.baml

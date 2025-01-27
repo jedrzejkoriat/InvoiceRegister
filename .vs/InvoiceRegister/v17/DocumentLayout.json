@@ -3,20 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.wpf\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|solutionrelative:invoiceregister.wpf\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/InvoiceRegister/True/SqlTable/dbo.InvoiceItems.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.wpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|solutionrelative:invoiceregister.wpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.entityframework\\data\\invoiceitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E894BE1-0D86-4BB0-82D9-0DC0A99B9A34}|InvoiceRegister.EntityFramework\\InvoiceRegister.EntityFramework.csproj|solutionrelative:invoiceregister.entityframework\\data\\invoiceitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.wpf\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|solutionrelative:invoiceregister.wpf\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.wpf\\viewmodels\\mainwindowvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|solutionrelative:invoiceregister.wpf\\viewmodels\\mainwindowvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.wpf\\base\\observableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|solutionrelative:invoiceregister.wpf\\base\\observableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.wpf\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|solutionrelative:invoiceregister.wpf\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.wpf\\models\\invoicevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|solutionrelative:invoiceregister.wpf\\models\\invoicevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.wpf\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|solutionrelative:invoiceregister.wpf\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|c:\\users\\jedrulcia\\desktop\\jedrzej\\programowanko\\github\\invoiceregister\\invoiceregister.wpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F32F337-4ACF-4CE5-9082-91AD3D197AF7}|InvoiceRegister.WPF\\InvoiceRegister.WPF.csproj|solutionrelative:invoiceregister.wpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,12 +62,86 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "dbo.InvoiceItems [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/InvoiceRegister/True/SqlTable/dbo.InvoiceItems.sql",
+              "ToolTip": "dbo.InvoiceItems [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-27T22:01:57.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InvoiceItem.cs",
+              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Data\\InvoiceItem.cs",
+              "RelativeDocumentMoniker": "InvoiceRegister.EntityFramework\\Data\\InvoiceItem.cs",
+              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.EntityFramework\\Data\\InvoiceItem.cs",
+              "RelativeToolTip": "InvoiceRegister.EntityFramework\\Data\\InvoiceItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-27T21:50:07.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InvoiceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Repositories\\InvoiceRepository.cs",
+              "RelativeDocumentMoniker": "InvoiceRegister.WPF\\Repositories\\InvoiceRepository.cs",
+              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Repositories\\InvoiceRepository.cs",
+              "RelativeToolTip": "InvoiceRegister.WPF\\Repositories\\InvoiceRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACgAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-27T21:42:44.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InvoiceVM.cs",
+              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Models\\InvoiceVM.cs",
+              "RelativeDocumentMoniker": "InvoiceRegister.WPF\\Models\\InvoiceVM.cs",
+              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Models\\InvoiceVM.cs",
+              "RelativeToolTip": "InvoiceRegister.WPF\\Models\\InvoiceVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-27T21:38:07.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\App.xaml.cs",
+              "RelativeDocumentMoniker": "InvoiceRegister.WPF\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\App.xaml.cs",
+              "RelativeToolTip": "InvoiceRegister.WPF\\App.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAADEAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-27T20:38:59.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "InvoiceRegister.WPF\\Views\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "InvoiceRegister.WPF\\Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-27T20:18:04.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Views\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "InvoiceRegister.WPF\\Views\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Views\\MainWindow.xaml.cs",
               "RelativeToolTip": "InvoiceRegister.WPF\\Views\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAYwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-26T20:10:04.058Z",
               "EditorCaption": ""
@@ -60,39 +149,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ObservableObject.cs",
-              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Base\\ObservableObject.cs",
-              "RelativeDocumentMoniker": "InvoiceRegister.WPF\\Base\\ObservableObject.cs",
-              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Base\\ObservableObject.cs",
-              "RelativeToolTip": "InvoiceRegister.WPF\\Base\\ObservableObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T20:06:38.565Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "MainWindowVM.cs",
               "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\ViewModels\\MainWindowVM.cs",
               "RelativeDocumentMoniker": "InvoiceRegister.WPF\\ViewModels\\MainWindowVM.cs",
               "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\ViewModels\\MainWindowVM.cs",
               "RelativeToolTip": "InvoiceRegister.WPF\\ViewModels\\MainWindowVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-26T20:05:47.888Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\App.xaml.cs",
-              "RelativeDocumentMoniker": "InvoiceRegister.WPF\\App.xaml.cs",
-              "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\App.xaml.cs",
-              "RelativeToolTip": "InvoiceRegister.WPF\\App.xaml.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwC8AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T17:36:14.126Z",
               "EditorCaption": ""
             }
           ]
