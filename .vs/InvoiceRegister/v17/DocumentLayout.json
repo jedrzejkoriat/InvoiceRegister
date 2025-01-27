@@ -66,8 +66,7 @@
               "RelativeToolTip": "InvoiceRegister.WPF\\ViewModels\\MainWindowVM.cs",
               "ViewState": "AgIAACsAAAAAAAAAAAAAwDsAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T23:08:12.451Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-27T23:08:12.451Z"
             },
             {
               "$type": "Document",
@@ -79,8 +78,7 @@
               "RelativeToolTip": "InvoiceRegister.WPF\\Models\\FilterVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T22:52:57.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-27T22:52:57.574Z"
             },
             {
               "$type": "Document",
@@ -92,8 +90,7 @@
               "RelativeToolTip": "InvoiceRegister.EntityFramework\\Data\\InvoiceItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T21:50:07.545Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-27T21:50:07.545Z"
             },
             {
               "$type": "Document",
@@ -103,7 +100,7 @@
               "RelativeDocumentMoniker": "InvoiceRegister.WPF\\Repositories\\InvoiceRepository.cs",
               "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Repositories\\InvoiceRepository.cs",
               "RelativeToolTip": "InvoiceRegister.WPF\\Repositories\\InvoiceRepository.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAIwCwAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAwwDIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-27T21:42:44.582Z",
               "EditorCaption": ""
@@ -118,8 +115,7 @@
               "RelativeToolTip": "InvoiceRegister.WPF\\Models\\InvoiceVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T21:38:07.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-27T21:38:07.849Z"
             },
             {
               "$type": "Document",
@@ -130,8 +126,7 @@
               "ToolTip": "C:\\Users\\Jedrulcia\\Desktop\\Jedrzej\\Programowanko\\github\\InvoiceRegister\\InvoiceRegister.WPF\\Views\\MainWindow.xaml",
               "RelativeToolTip": "InvoiceRegister.WPF\\Views\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-27T20:18:04.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-27T20:18:04.423Z"
             },
             {
               "$type": "Document",
@@ -143,8 +138,7 @@
               "RelativeToolTip": "InvoiceRegister.WPF\\Views\\MainWindow.xaml.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAA7wCwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T20:10:04.058Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-26T20:10:04.058Z"
             }
           ]
         }

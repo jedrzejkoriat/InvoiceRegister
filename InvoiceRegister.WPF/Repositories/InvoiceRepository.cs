@@ -50,16 +50,16 @@ namespace InvoiceRegister.WPF.Repositories
 
 		public async Task<ObservableCollection<InvoiceVM>> GetFilteredInvoiceVMsAsync(FilterVM filterVM)
 		{
-			var invoiceVMs = await GetInvoiceVMsAsync();
+			var filteredInvoices = (await GetInvoiceVMsAsync()).AsEnumerable();
 
-			if (filterVM.FromDateToggle) invoiceVMs = new ObservableCollection<InvoiceVM>(invoiceVMs.Where(i => i.IssueDate >= filterVM.FromDate));
-			if (filterVM.ToDateToggle) invoiceVMs = new ObservableCollection<InvoiceVM>(invoiceVMs.Where(i => i.IssueDate <= filterVM.ToDate));
-			if (filterVM.MinPriceToggle) invoiceVMs = new ObservableCollection<InvoiceVM>(invoiceVMs.Where(i => i.PriceGross >= filterVM.MinPrice));
-			if (filterVM.MaxPriceToggle) invoiceVMs = new ObservableCollection<InvoiceVM>(invoiceVMs.Where(i => i.PriceGross <= filterVM.MaxPrice));
-			if (filterVM.ClientNameToggle) invoiceVMs = new ObservableCollection<InvoiceVM>(invoiceVMs.Where(i => i.ClientName.Contains(filterVM.ClientName)));
-			if (filterVM.ClientNIPToggle) invoiceVMs = new ObservableCollection<InvoiceVM>(invoiceVMs.Where(i => i.ClientNIP == filterVM.ClientNIP));
+			if (filterVM.FromDateToggle) filteredInvoices = filteredInvoices.Where(i => i.IssueDate >= filterVM.FromDate);
+			if (filterVM.ToDateToggle) filteredInvoices = filteredInvoices.Where(i => i.IssueDate <= filterVM.ToDate);
+			if (filterVM.MinPriceToggle) filteredInvoices = filteredInvoices.Where(i => i.PriceGross >= filterVM.MinPrice);
+			if (filterVM.MaxPriceToggle) filteredInvoices = filteredInvoices.Where(i => i.PriceGross <= filterVM.MaxPrice);
+			if (filterVM.ClientNameToggle) filteredInvoices = filteredInvoices.Where(i => i.ClientName.Contains(filterVM.ClientName));
+			if (filterVM.ClientNIPToggle) filteredInvoices = filteredInvoices.Where(i => i.ClientNIP == filterVM.ClientNIP);
 
-			return invoiceVMs;
+			return new ObservableCollection<InvoiceVM>(filteredInvoices);
 		}
 	}
 }
