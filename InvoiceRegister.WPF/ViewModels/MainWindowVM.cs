@@ -31,6 +31,17 @@ namespace InvoiceRegister.WPF.ViewModels
 			}
 		}
 
+		private FilterVM filterVM = new FilterVM();
+		public FilterVM FilterVM
+		{
+			get => filterVM;
+			set
+			{
+				filterVM = value;
+				OnPropertyChanged();
+			}
+		}
+
 		private bool isBusy = false;
 		public async Task InitializeAsync()
 		{
@@ -40,6 +51,19 @@ namespace InvoiceRegister.WPF.ViewModels
 			try
 			{
 				InvoiceVMs = await invoiceRepository.GetInvoiceVMsAsync();
+			}
+			catch { }
+			finally { isBusy = false; }
+		}
+
+		public async Task ApplyFilterAsync()
+		{
+			if (isBusy) return;
+			isBusy = true;
+
+			try
+			{
+				InvoiceVMs = await invoiceRepository.GetFilteredInvoiceVMsAsync(FilterVM);
 			}
 			catch { }
 			finally { isBusy = false; }

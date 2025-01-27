@@ -12,5 +12,6 @@ namespace InvoiceRegister.WPF.Interfaces.Repositories
 	public interface IInvoiceRepository : IGenericRepository<Invoice>
 	{
 		Task<ObservableCollection<InvoiceVM>> GetInvoiceVMsAsync();
+		Task<ObservableCollection<InvoiceVM>> GetFilteredInvoiceVMsAsync(FilterVM filterVM);
 	}
 }

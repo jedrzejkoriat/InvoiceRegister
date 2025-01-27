@@ -33,5 +33,18 @@ namespace InvoiceRegister.WPF
 		{
 
 		}
+
+		public void MainWindow_Loaded(object sender, RoutedEventArgs e)
+		{
+			InvoicesGrid.Columns[1].Visibility = Visibility.Hidden;
+			InvoicesGrid.Columns[2].Visibility = Visibility.Hidden;
+		}
+
+		public async void Filter_Click(object sender, RoutedEventArgs e)
+		{
+			await this.mainWindowVM.ApplyFilterAsync();
+			InvoicesGrid.Columns[1].Visibility = Visibility.Hidden;
+			InvoicesGrid.Columns[2].Visibility = Visibility.Hidden;
+		}
 	}
 }
