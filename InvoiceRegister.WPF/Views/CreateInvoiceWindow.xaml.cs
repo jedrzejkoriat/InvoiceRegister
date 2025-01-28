@@ -1,4 +1,4 @@
-﻿using InvoiceRegister.WPF.Configurations.Exceptions;
+﻿using InvoiceRegister.WPF.Base.Exceptions;
 using InvoiceRegister.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ namespace InvoiceRegister.WPF.Views
 	public partial class CreateInvoiceWindow : Window
 	{
 		private readonly CreateInvoiceWindowVM createInvoiceWindowVM;
-		public CreateInvoiceWindow(CreateInvoiceWindowVM createInvoiceWindowVM, IServiceProvider serviceProvider)
+		public CreateInvoiceWindow(CreateInvoiceWindowVM createInvoiceWindowVM)
 		{
 			InitializeComponent();
 			this.createInvoiceWindowVM = createInvoiceWindowVM;
@@ -44,7 +44,7 @@ namespace InvoiceRegister.WPF.Views
 			}
 			catch
 			{
-				ErrorText.Text = "Unexpected error occurred";
+				ErrorText.Text = "Unexpected error occurred.";
 				return;
 			}
 			this.Close();

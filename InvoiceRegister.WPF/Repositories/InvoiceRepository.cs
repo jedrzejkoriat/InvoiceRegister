@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using InvoiceRegister.EntityFramework;
 using InvoiceRegister.EntityFramework.Data;
-using InvoiceRegister.WPF.Configurations.Exceptions;
+using InvoiceRegister.WPF.Base.Exceptions;
 using InvoiceRegister.WPF.Interfaces.Repositories;
 using InvoiceRegister.WPF.Models;
 using Microsoft.Extensions.DependencyInjection;
@@ -95,6 +95,19 @@ namespace InvoiceRegister.WPF.Repositories
 			newInvoice.ClientId = client.Id;
 			
 			await AddAsync(newInvoice);
+		}
+
+		public async Task<InvoiceVM> GetInvoiceVMAsync(int id)
+		{
+			var invoiceVM = mapper.Map<InvoiceVM>(await GetAsync(id));
+
+			invoiceVM.PaymentDate = (await paymentRepository.GetAllAsync())
+				.SingleOrDefault(p => p.InvoiceId == invoiceVM.Id)?.PaymentDate ?? null;
+			invoiceVM.PriceGross = (await invoiceItemRepository.GetAllAsync())
+				.Where(i => i.InvoiceId == invoiceVM.Id)
+				.Sum(i => Math.Round((i.Price * i.Amount) * (1.00m + i.VAT / 100.00m), 2));
+
+			return invoiceVM;
 		}
 
 		// Check if NIP has correct format: "INV/XXXX/YY/ZZ/ABC"

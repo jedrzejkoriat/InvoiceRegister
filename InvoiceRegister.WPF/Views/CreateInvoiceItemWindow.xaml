@@ -1,0 +1,72 @@
+﻿<Window x:Class="InvoiceRegister.WPF.Views.CreateInvoiceItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InvoiceRegister.WPF.Views"
+        mc:Ignorable="d"
+        Title="CreateInvoiceItemWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="70*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Button Content="Change Status" Width="100" Height="20"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Button Content="Add Item" Width="100" Height="20"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Button Content="Delete Invoice" Width="100" Height="20"/>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1">
+                <TextBlock Text="{Binding InvoiceVM.InvoiceNumber}" VerticalAlignment="Top"/>
+                <TextBlock Text="{Binding InvoiceVM.IssueDate}" VerticalAlignment="Bottom"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <TextBlock Text="{Binding InvoiceVM.PriceGross}" VerticalAlignment="Top"/>
+                <TextBlock Text="{Binding InvoiceVM.SaleDate}" VerticalAlignment="Bottom"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <TextBlock Text="{Binding InvoiceVM.PaymentDate}" VerticalAlignment="Top"/>
+                <TextBlock Text="{Binding InvoiceVM.PaymentDueDate}" VerticalAlignment="Bottom"/>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="2">
+                <TextBlock Text="{Binding ClientVM.Name}" VerticalAlignment="Top"/>
+                <TextBlock Text="{Binding ClientVM.NIP}" VerticalAlignment="Bottom"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="2">
+                <TextBlock Text="{Binding ClientVM.Email}" VerticalAlignment="Top"/>
+                <TextBlock Text="{Binding ClientVM.City}" VerticalAlignment="Bottom"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="2">
+                <TextBlock Text="{Binding ClientVM.PostCode}" VerticalAlignment="Top"/>
+                <TextBlock Text="{Binding ClientVM.Street}" VerticalAlignment="Bottom"/>
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Window>

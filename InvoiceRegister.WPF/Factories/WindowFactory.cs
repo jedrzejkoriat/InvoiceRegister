@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using InvoiceRegister.WPF.Views;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,15 @@ namespace InvoiceRegister.WPF.Factories
 			this.serviceProvider = serviceProvider;
 		}
 
-		public T CreateWindow<T>() where T : Window
+		public T CreateWindow<T>(int id) where T : Window
 		{
 			var window = serviceProvider.GetRequiredService<T>();
+
+			if (window is CreateInvoiceItemWindow createWindow)
+			{
+				createWindow.Id = id;
+			}
+
 			return window;
 		}
 	}

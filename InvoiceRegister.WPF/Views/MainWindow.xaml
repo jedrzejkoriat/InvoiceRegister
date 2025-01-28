@@ -82,7 +82,11 @@
                     <DataGridTemplateColumn Header="Action">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Details" Click="OpenInvoiceDetails_Click" />
+                                <Button Content="Details" Click="OpenInvoiceDetails_Click">
+                                    <Button.Tag>
+                                        <Binding Path="Id" />
+                                    </Button.Tag>
+                                </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

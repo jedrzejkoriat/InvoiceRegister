@@ -42,7 +42,6 @@ namespace InvoiceRegister.WPF.ViewModels
 			}
 		}
 
-		private bool isBusy = false;
 		public async Task InitializeAsync()
 		{
 			InvoiceVMs = await invoiceRepository.GetInvoiceVMsAsync();

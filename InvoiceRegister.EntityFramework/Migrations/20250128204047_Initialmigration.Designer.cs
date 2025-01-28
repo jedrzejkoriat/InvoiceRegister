@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InvoiceRegister.EntityFramework.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250126175727_AddSeedConfigurations")]
-    partial class AddSeedConfigurations
+    [Migration("20250128204047_Initialmigration")]
+    partial class Initialmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,10 @@ namespace InvoiceRegister.EntityFramework.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -62,8 +66,9 @@ namespace InvoiceRegister.EntityFramework.Migrations
                         {
                             Id = 1,
                             City = "Warszawa",
+                            Email = "company_A@localhost.com",
                             NIP = "0123456789",
-                            Name = "Firma A",
+                            Name = "Company A",
                             PostCode = "02-691",
                             Street = "Cybernetyki 5"
                         },
@@ -71,8 +76,9 @@ namespace InvoiceRegister.EntityFramework.Migrations
                         {
                             Id = 2,
                             City = "Kraków",
+                            Email = "company_B@localhost.com",
                             NIP = "9876543210",
-                            Name = "Firma B",
+                            Name = "Company B",
                             PostCode = "31-021",
                             Street = "Floriańska 12"
                         },
@@ -80,8 +86,9 @@ namespace InvoiceRegister.EntityFramework.Migrations
                         {
                             Id = 3,
                             City = "Gdańsk",
+                            Email = "company_C@localhost.com",
                             NIP = "1234567891",
-                            Name = "Firma C",
+                            Name = "Company C",
                             PostCode = "80-831",
                             Street = "Długa 32"
                         },
@@ -89,8 +96,9 @@ namespace InvoiceRegister.EntityFramework.Migrations
                         {
                             Id = 4,
                             City = "Wrocław",
+                            Email = "company_D@localhost.com",
                             NIP = "2345678901",
-                            Name = "Firma D",
+                            Name = "Company D",
                             PostCode = "50-066",
                             Street = "Świdnicka 15"
                         },
@@ -98,8 +106,9 @@ namespace InvoiceRegister.EntityFramework.Migrations
                         {
                             Id = 5,
                             City = "Poznań",
+                            Email = "company_E@localhost.com",
                             NIP = "3456789012",
-                            Name = "Firma E",
+                            Name = "Company E",
                             PostCode = "61-888",
                             Street = "Półwiejska 20"
                         },
@@ -107,8 +116,9 @@ namespace InvoiceRegister.EntityFramework.Migrations
                         {
                             Id = 6,
                             City = "Łódź",
+                            Email = "company_F@localhost.com",
                             NIP = "4567890123",
-                            Name = "Firma F",
+                            Name = "Company F",
                             PostCode = "90-009",
                             Street = "Piotrkowska 76"
                         },
@@ -116,8 +126,9 @@ namespace InvoiceRegister.EntityFramework.Migrations
                         {
                             Id = 7,
                             City = "Katowice",
+                            Email = "company_G@localhost.com",
                             NIP = "5678901234",
-                            Name = "Firma G",
+                            Name = "Company G",
                             PostCode = "40-095",
                             Street = "Stawowa 10"
                         },
@@ -125,8 +136,9 @@ namespace InvoiceRegister.EntityFramework.Migrations
                         {
                             Id = 8,
                             City = "Lublin",
+                            Email = "company_H@localhost.com",
                             NIP = "6789012345",
-                            Name = "Firma H",
+                            Name = "Company H",
                             PostCode = "20-002",
                             Street = "Krakowskie Przedmieście 5"
                         },
@@ -134,8 +146,9 @@ namespace InvoiceRegister.EntityFramework.Migrations
                         {
                             Id = 9,
                             City = "Szczecin",
+                            Email = "company_I@localhost.com",
                             NIP = "7890123456",
-                            Name = "Firma I",
+                            Name = "Company I",
                             PostCode = "70-001",
                             Street = "Aleja Niepodległości 4"
                         },
@@ -143,8 +156,9 @@ namespace InvoiceRegister.EntityFramework.Migrations
                         {
                             Id = 10,
                             City = "Bydgoszcz",
+                            Email = "company_J@localhost.com",
                             NIP = "8901234567",
-                            Name = "Firma J",
+                            Name = "Company J",
                             PostCode = "85-009",
                             Street = "Dworcowa 25"
                         });
@@ -176,35 +190,35 @@ namespace InvoiceRegister.EntityFramework.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Usługa 1",
+                            Name = "Service 1",
                             Price = 5000m,
                             VAT = 23
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Usługa 2",
+                            Name = "Service 2",
                             Price = 7000m,
                             VAT = 8
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Usługa 3",
+                            Name = "Service 3",
                             Price = 3500m,
                             VAT = 5
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Usługa 4",
+                            Name = "Service 4",
                             Price = 1500m,
                             VAT = 0
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Usługa 5",
+                            Name = "Service 5",
                             Price = 3000m,
                             VAT = 23
                         });
@@ -212,11 +226,11 @@ namespace InvoiceRegister.EntityFramework.Migrations
 
             modelBuilder.Entity("InvoiceRegister.EntityFramework.Data.Invoice", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
 
                     b.Property<int>("ClientId")
                         .HasColumnType("int");

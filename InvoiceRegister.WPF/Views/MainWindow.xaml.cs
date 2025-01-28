@@ -34,13 +34,21 @@ namespace InvoiceRegister.WPF
 
 		public async void OpenInvoiceDetails_Click(object sender, RoutedEventArgs e)
 		{
-
+			var button = sender as Button;
+			if (button?.Tag is int id)
+			{
+				CreateInvoiceItemWindow createInvoiceItemWindow = windowFactory.CreateWindow<CreateInvoiceItemWindow>(id);
+				await createInvoiceItemWindow.InitializeAsync();
+				createInvoiceItemWindow.ShowDialog();
+				await this.mainWindowVM.InitializeAsync();
+				HideColumns();
+			}
 		}
 
 		public async void OpenCreateInvoice_Click(object sender, RoutedEventArgs e)
 		{
-			CreateInvoiceWindow createWindow = windowFactory.CreateWindow<CreateInvoiceWindow>();
-			createWindow.ShowDialog();
+			CreateInvoiceWindow createInvoiceWindow = windowFactory.CreateWindow<CreateInvoiceWindow>(0);
+			createInvoiceWindow.ShowDialog();
 			await this.mainWindowVM.InitializeAsync();
 			HideColumns();
 		}

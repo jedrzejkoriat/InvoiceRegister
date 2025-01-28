@@ -9,6 +9,6 @@ namespace InvoiceRegister.WPF.Factories
 {
 	public interface IWindowFactory
 	{
-		T CreateWindow<T>() where T : Window;
+		T CreateWindow<T>(int id) where T : Window;
 	}
 }

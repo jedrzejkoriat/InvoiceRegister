@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\App.xaml
-2-116104615
+3-812576900
 
-32-1135559075
+341269896426
 2291077575800
-Views\CreateInvoiceWindow.xaml;Views\MainWindow.xaml;
+Views\CreateInvoiceItemWindow.xaml;Views\CreateInvoiceWindow.xaml;Views\MainWindow.xaml;
 
 False
 
