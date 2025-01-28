@@ -39,7 +39,7 @@ namespace InvoiceRegister.WPF
 
 		public async void OpenCreateInvoice_Click(object sender, RoutedEventArgs e)
 		{
-			CreateWindow createWindow = windowFactory.CreateWindow<CreateWindow>();
+			CreateInvoiceWindow createWindow = windowFactory.CreateWindow<CreateInvoiceWindow>();
 			createWindow.ShowDialog();
 			await this.mainWindowVM.InitializeAsync();
 			HideColumns();

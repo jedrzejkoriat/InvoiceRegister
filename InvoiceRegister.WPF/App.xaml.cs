@@ -55,8 +55,8 @@ namespace InvoiceRegister.WPF
 			services.AddScoped<MainWindowVM>();
 			services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainWindowVM>(), s.GetRequiredService<IWindowFactory>()));
 
-			services.AddTransient<CreateWindowVM>();
-			services.AddTransient<CreateWindow>();
+			services.AddTransient<CreateInvoiceWindowVM>();
+			services.AddTransient<CreateInvoiceWindow>();
 
 			return services.BuildServiceProvider();
 		}

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using InvoiceRegister.EntityFramework;
 using InvoiceRegister.EntityFramework.Data;
+using InvoiceRegister.WPF.Configurations.Exceptions;
 using InvoiceRegister.WPF.Interfaces.Repositories;
 using InvoiceRegister.WPF.Models;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,6 +10,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace InvoiceRegister.WPF.Repositories
@@ -61,6 +63,45 @@ namespace InvoiceRegister.WPF.Repositories
 			if (filterVM.OverduePaymentToggle) filteredInvoices = filteredInvoices.Where(i => i.PaymentDate == null && i.PaymentDueDate < DateTime.UtcNow);
 
 			return new ObservableCollection<InvoiceVM>(filteredInvoices);
+		}
+
+		public async Task CreateInvoiceAsync(CreateInvoiceVM createInvoiceVM)
+		{
+			if (createInvoiceVM.InvoiceNumber == null || !IsInvoiceNumberValid(createInvoiceVM.InvoiceNumber))
+			{
+				throw new InvoiceNumberException("Invalid invoice number format.");
+			}
+
+			if ((await GetAllAsync()).Any(i => i.InvoiceNumber == createInvoiceVM.InvoiceNumber))
+			{
+				throw new InvoiceNumberException("Invoice with this number already exsists.");
+			}
+
+			if (createInvoiceVM.ClientNIP.Length != 10 || !createInvoiceVM.ClientNIP.All(char.IsDigit))
+			{
+				throw new NIPException("Invalid NIP format.");
+			}
+			
+			var client = (await clientRepository.GetAllAsync()).Where(c => c.NIP == createInvoiceVM.ClientNIP).SingleOrDefault();
+
+			if (client == null)
+			{
+				throw new NIPException("Client with this NIP does not exsist.");
+			}
+
+			var newInvoice = mapper.Map<Invoice>(createInvoiceVM);
+
+			newInvoice.IsPaid = false;
+			newInvoice.ClientId = client.Id;
+			
+			await AddAsync(newInvoice);
+		}
+
+		// Check if NIP has correct format: "INV/XXXX/YY/ZZ/ABC"
+		private bool IsInvoiceNumberValid(string clientNIP)
+		{
+			string pattern = @"^INV/\d{4}/\d{2}/\d{2}/\d+$";
+			return Regex.IsMatch(clientNIP, pattern);
 		}
 	}
 }

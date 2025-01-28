@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InvoiceRegister.WPF.Models
 {
-	public class CreateVM
+	public class CreateInvoiceVM
 	{
 		public string InvoiceNumber { get; set; }
 		public string ClientNIP { get; set; }
