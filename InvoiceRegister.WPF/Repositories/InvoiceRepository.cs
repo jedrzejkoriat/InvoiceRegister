@@ -58,6 +58,7 @@ namespace InvoiceRegister.WPF.Repositories
 			if (filterVM.MaxPriceToggle) filteredInvoices = filteredInvoices.Where(i => i.PriceGross <= filterVM.MaxPrice);
 			if (filterVM.ClientNameToggle) filteredInvoices = filteredInvoices.Where(i => i.ClientName.Contains(filterVM.ClientName));
 			if (filterVM.ClientNIPToggle) filteredInvoices = filteredInvoices.Where(i => i.ClientNIP == filterVM.ClientNIP);
+			if (filterVM.OverduePaymentToggle) filteredInvoices = filteredInvoices.Where(i => i.PaymentDate == null && i.PaymentDueDate < DateTime.UtcNow);
 
 			return new ObservableCollection<InvoiceVM>(filteredInvoices);
 		}
