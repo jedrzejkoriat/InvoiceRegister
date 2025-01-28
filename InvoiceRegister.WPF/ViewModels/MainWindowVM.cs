@@ -45,28 +45,12 @@ namespace InvoiceRegister.WPF.ViewModels
 		private bool isBusy = false;
 		public async Task InitializeAsync()
 		{
-			if (isBusy) return;
-			isBusy = true;
-
-			try
-			{
-				InvoiceVMs = await invoiceRepository.GetInvoiceVMsAsync();
-			}
-			catch { }
-			finally { isBusy = false; }
+			InvoiceVMs = await invoiceRepository.GetInvoiceVMsAsync();
 		}
 
 		public async Task ApplyFilterAsync()
 		{
-			if (isBusy) return;
-			isBusy = true;
-
-			try
-			{
-				InvoiceVMs = await invoiceRepository.GetFilteredInvoiceVMsAsync(FilterVM);
-			}
-			catch { }
-			finally { isBusy = false; }
+			InvoiceVMs = await invoiceRepository.GetFilteredInvoiceVMsAsync(FilterVM);
 		}
 	}
 }

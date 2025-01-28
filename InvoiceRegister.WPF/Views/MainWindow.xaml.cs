@@ -1,5 +1,6 @@
 ﻿using InvoiceRegister.WPF.Factories;
 using InvoiceRegister.WPF.ViewModels;
+using InvoiceRegister.WPF.Views;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,10 +17,12 @@ namespace InvoiceRegister.WPF
 	public partial class MainWindow : Window
 	{
 		private readonly MainWindowVM mainWindowVM;
+		private readonly IWindowFactory windowFactory;
 
 		public MainWindow(MainWindowVM mainWindowVM, IWindowFactory windowFactory)
 		{
 			this.mainWindowVM = mainWindowVM;
+			this.windowFactory = windowFactory;
 			DataContext = this.mainWindowVM;
 		}
 
@@ -34,15 +37,27 @@ namespace InvoiceRegister.WPF
 
 		}
 
+		public async void OpenCreateInvoice_Click(object sender, RoutedEventArgs e)
+		{
+			CreateWindow createWindow = windowFactory.CreateWindow<CreateWindow>();
+			createWindow.ShowDialog();
+			await this.mainWindowVM.InitializeAsync();
+			HideColumns();
+		}
+
 		public void MainWindow_Loaded(object sender, RoutedEventArgs e)
 		{
-			InvoicesGrid.Columns[1].Visibility = Visibility.Hidden;
-			InvoicesGrid.Columns[2].Visibility = Visibility.Hidden;
+			HideColumns();
 		}
 
 		public async void Filter_Click(object sender, RoutedEventArgs e)
 		{
 			await this.mainWindowVM.ApplyFilterAsync();
+			HideColumns();
+		}
+
+		private void HideColumns()
+		{
 			InvoicesGrid.Columns[1].Visibility = Visibility.Hidden;
 			InvoicesGrid.Columns[2].Visibility = Visibility.Hidden;
 		}

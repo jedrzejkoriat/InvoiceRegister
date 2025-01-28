@@ -5,6 +5,7 @@ using InvoiceRegister.WPF.Factories;
 using InvoiceRegister.WPF.Interfaces.Repositories;
 using InvoiceRegister.WPF.Repositories;
 using InvoiceRegister.WPF.ViewModels;
+using InvoiceRegister.WPF.Views;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Configuration;
@@ -51,8 +52,11 @@ namespace InvoiceRegister.WPF
 			services.AddScoped<IPaymentRepository, PaymentRepository>();
 
 			// Views and ViewModels
-			services.AddTransient<MainWindowVM>();
+			services.AddScoped<MainWindowVM>();
 			services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainWindowVM>(), s.GetRequiredService<IWindowFactory>()));
+
+			services.AddTransient<CreateWindowVM>();
+			services.AddTransient<CreateWindow>();
 
 			return services.BuildServiceProvider();
 		}

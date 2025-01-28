@@ -61,3 +61,5 @@ C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceR
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\ref\InvoiceRegister.WPF.dll
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\Views\MainWindow.g.cs
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\Views\MainWindow.baml
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\Views\CreateWindow.g.cs
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\Views\CreateWindow.baml
