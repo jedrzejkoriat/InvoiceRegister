@@ -16,10 +16,12 @@ namespace InvoiceRegister.WPF.ViewModels
 		private int Id;
 		private readonly IInvoiceRepository invoiceRepository;
 		private readonly IInvoiceItemRepository invoiceItemRepository;
+		private readonly IPaymentRepository paymentRepository;
 		public CreateInvoiceItemWindowVM(IServiceProvider serviceProvider)
 		{
 			this.invoiceRepository = serviceProvider.GetRequiredService<IInvoiceRepository>();
 			this.invoiceItemRepository = serviceProvider.GetRequiredService<IInvoiceItemRepository>();
+			this.paymentRepository = serviceProvider.GetRequiredService<IPaymentRepository>();
 		}
 
 		private ClientVM clientVM = new ClientVM();
@@ -66,6 +68,17 @@ namespace InvoiceRegister.WPF.ViewModels
 			}
 		}
 
+		private DateTime newPaymentDate = DateTime.Now;
+		public DateTime NewPaymentDate
+		{
+			get => newPaymentDate;
+			set
+			{
+				newPaymentDate = value;
+				OnPropertyChanged();
+			}
+		}
+
 		public async Task InitializeAsync(int id)
 		{
 			this.Id = id;
@@ -75,6 +88,7 @@ namespace InvoiceRegister.WPF.ViewModels
 
 		public async Task RefreshAsync()
 		{
+			(InvoiceVM, ClientVM) = await invoiceRepository.GetInvoiceVMAsync(this.Id);
 			InvoiceItemVMs = await invoiceItemRepository.GetInvoiceItemVMsAsync(this.Id);
 		}
 
@@ -86,6 +100,19 @@ namespace InvoiceRegister.WPF.ViewModels
 		public async Task DeleteInvoiceItemAsync(int id)
 		{
 			await invoiceItemRepository.DeleteInvoiceItemAsync(id);
+		}
+
+		public async Task DeleteInvoiceAsync()
+		{
+			await invoiceRepository.DeleteInvoiceAsync(this.Id);
+		}
+
+		public async Task ChangeInvoiceStatusAsync()
+		{
+			if (await paymentRepository.CreatePaymentAsync(this.Id, NewPaymentDate))
+			{
+				await invoiceRepository.ChangeStatusAsync(this.Id);
+			}
 		}
 	}
 }

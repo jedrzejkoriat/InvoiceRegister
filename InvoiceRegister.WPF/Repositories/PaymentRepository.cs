@@ -14,5 +14,17 @@ namespace InvoiceRegister.WPF.Repositories
 		public PaymentRepository(AppDbContext context) : base(context)
 		{
 		}
+
+		public async Task<bool> CreatePaymentAsync(int invoiceId, DateTime paymentDate)
+		{
+			if ((await GetAllAsync()).Any(p => p.InvoiceId == invoiceId))
+			{
+				return false;
+			}
+
+			var payment = new Payment { InvoiceId = invoiceId, PaymentDate = paymentDate };
+			await AddAsync(payment);
+			return true;
+		}
 	}
 }

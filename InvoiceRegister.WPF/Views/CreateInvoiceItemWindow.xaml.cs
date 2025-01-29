@@ -46,5 +46,17 @@ namespace InvoiceRegister.WPF.Views
 			await createInvoiceItemWindowVM.CreateInvoiceItemAsync();
 			await createInvoiceItemWindowVM.RefreshAsync();
 		}
+
+		public async void DeleteInvoice_Click(object sender, RoutedEventArgs e)
+		{
+			await createInvoiceItemWindowVM.DeleteInvoiceAsync();
+			this.Close();
+		}
+
+		public async void ChangeStatus_Click(object sender, RoutedEventArgs e)
+		{
+			await createInvoiceItemWindowVM.ChangeInvoiceStatusAsync();
+			await createInvoiceItemWindowVM.RefreshAsync();
+		}
 	}
 }

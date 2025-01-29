@@ -9,5 +9,6 @@ namespace InvoiceRegister.WPF.Interfaces.Repositories
 {
 	public interface IPaymentRepository : IGenericRepository<Payment>
 	{
+		Task<bool> CreatePaymentAsync(int invoiceId, DateTime paymentDate);
 	}
 }

@@ -16,6 +16,7 @@ namespace InvoiceRegister.WPF.Models
 		public DateTime IssueDate { get; set; }
 		public DateTime SaleDate { get; set; }
 		public DateTime PaymentDueDate { get; set; }
+		public bool IsPaid { get; set; }
 
 		// Payment table data
 		public DateTime? PaymentDate { get; set; }

@@ -119,5 +119,17 @@ namespace InvoiceRegister.WPF.Repositories
 			string pattern = @"^INV/\d{4}/\d{2}/\d{2}/\d+$";
 			return Regex.IsMatch(clientNIP, pattern);
 		}
+
+		public async Task DeleteInvoiceAsync(int id)
+		{
+			await DeleteAsync(id);
+		}
+
+		public async Task ChangeStatusAsync(int id)
+		{
+			var invoice = await GetAsync(id);
+			invoice.IsPaid = true;
+			await UpdateAsync(invoice);
+		}
 	}
 }
