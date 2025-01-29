@@ -4,6 +4,7 @@ using InvoiceRegister.WPF.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,15 +14,15 @@ namespace InvoiceRegister.WPF.ViewModels
 	public class CreateInvoiceItemWindowVM : ObservableObject
 	{
 		private int Id;
-		private readonly IClientRepository clientRepository;
 		private readonly IInvoiceRepository invoiceRepository;
+		private readonly IInvoiceItemRepository invoiceItemRepository;
 		public CreateInvoiceItemWindowVM(IServiceProvider serviceProvider)
 		{
-			this.clientRepository = serviceProvider.GetRequiredService<IClientRepository>();
 			this.invoiceRepository = serviceProvider.GetRequiredService<IInvoiceRepository>();
+			this.invoiceItemRepository = serviceProvider.GetRequiredService<IInvoiceItemRepository>();
 		}
 
-		private ClientVM clientVM;
+		private ClientVM clientVM = new ClientVM();
 		public ClientVM ClientVM
 		{
 			get => clientVM;
@@ -32,7 +33,7 @@ namespace InvoiceRegister.WPF.ViewModels
 			}
 		}
 
-		private InvoiceVM invoiceVM;
+		private InvoiceVM invoiceVM = new InvoiceVM();
 		public InvoiceVM InvoiceVM
 		{
 			get => invoiceVM;
@@ -43,10 +44,48 @@ namespace InvoiceRegister.WPF.ViewModels
 			}
 		}
 
+		private ObservableCollection<InvoiceItemVM> invoiceItemVMs;
+		public ObservableCollection<InvoiceItemVM> InvoiceItemVMs
+		{
+			get => invoiceItemVMs;
+			set
+			{
+				invoiceItemVMs = value;
+				OnPropertyChanged();
+			}
+		}
+
+		private CreateInvoiceItemVM createInvoiceItemVM = new CreateInvoiceItemVM();
+		public CreateInvoiceItemVM CreateInvoiceItemVM
+		{
+			get => createInvoiceItemVM;
+			set
+			{
+				createInvoiceItemVM = value;
+				OnPropertyChanged();
+			}
+		}
+
 		public async Task InitializeAsync(int id)
 		{
 			this.Id = id;
-			(InvoiceVM, ClientVM) = await invoiceRepository.GetInvoiceVMAsync(id);
+			(InvoiceVM, ClientVM) = await invoiceRepository.GetInvoiceVMAsync(this.Id);
+			InvoiceItemVMs = await invoiceItemRepository.GetInvoiceItemVMsAsync(this.Id);
+		}
+
+		public async Task RefreshAsync()
+		{
+			InvoiceItemVMs = await invoiceItemRepository.GetInvoiceItemVMsAsync(this.Id);
+		}
+
+		public async Task CreateInvoiceItemAsync()
+		{
+			await invoiceItemRepository.CreateInvoiceItemAsync(CreateInvoiceItemVM, this.Id);
+		}
+
+		public async Task DeleteInvoiceItemAsync(int id)
+		{
+			await invoiceItemRepository.DeleteInvoiceItemAsync(id);
 		}
 	}
 }

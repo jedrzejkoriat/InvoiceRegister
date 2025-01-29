@@ -30,5 +30,21 @@ namespace InvoiceRegister.WPF.Views
 		{
 			await createInvoiceItemWindowVM.InitializeAsync(Id);
 		}
+
+		public async void DeleteInvoiceItem_Click(object sender, RoutedEventArgs e)
+		{
+			var button = sender as Button;
+			if (button?.Tag is int id)
+			{
+				await createInvoiceItemWindowVM.DeleteInvoiceItemAsync(id);
+			}
+			await createInvoiceItemWindowVM.RefreshAsync();
+		}
+		
+		public async void AddInvoiceItem_Click(object sender, RoutedEventArgs e)
+		{
+			await createInvoiceItemWindowVM.CreateInvoiceItemAsync();
+			await createInvoiceItemWindowVM.RefreshAsync();
+		}
 	}
 }
