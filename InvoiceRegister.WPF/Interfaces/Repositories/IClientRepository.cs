@@ -10,6 +10,5 @@ namespace InvoiceRegister.WPF.Interfaces.Repositories
 {
 	public interface IClientRepository : IGenericRepository<Client>
 	{
-		Task<ClientVM> GetClientVMAsync(int invoiceId);
 	}
 }

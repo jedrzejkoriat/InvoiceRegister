@@ -72,7 +72,7 @@
                 <CheckBox IsChecked="{Binding FilterVM.OverduePaymentToggle}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,8"/>
             </Grid>
 
-            <Button Grid.Column="0" Grid.Row="0" Content="Create" VerticalAlignment="Center" Height="20" Width="120" Click="OpenCreateInvoice_Click"/>
+            <Button Grid.Column="0" Grid.Row="0" Content="Create" VerticalAlignment="Center" Height="20" Width="120" Click="OpenInvoiceCreate_Click"/>
             <Button Grid.Column="6" Grid.Row="1"  Content="Fliter" VerticalAlignment="Bottom" Margin="0,0,0,5" Height="20" Width="120" Click="Filter_Click"/>
         </Grid>
 

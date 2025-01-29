@@ -46,9 +46,7 @@ namespace InvoiceRegister.WPF.ViewModels
 		public async Task InitializeAsync(int id)
 		{
 			this.Id = id;
-
-			ClientVM = await clientRepository.GetClientVMAsync(id);
-			InvoiceVM = await invoiceRepository.GetInvoiceVMAsync(id);
+			(InvoiceVM, ClientVM) = await invoiceRepository.GetInvoiceVMAsync(id);
 		}
 	}
 }

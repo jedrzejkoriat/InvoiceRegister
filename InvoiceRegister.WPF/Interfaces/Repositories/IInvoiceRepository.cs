@@ -14,6 +14,6 @@ namespace InvoiceRegister.WPF.Interfaces.Repositories
 		Task<ObservableCollection<InvoiceVM>> GetInvoiceVMsAsync();
 		Task<ObservableCollection<InvoiceVM>> GetFilteredInvoiceVMsAsync(FilterVM filterVM);
 		Task CreateInvoiceAsync(CreateInvoiceVM createInvoiceVM);
-		Task<InvoiceVM> GetInvoiceVMAsync(int id);
+		Task<(InvoiceVM invoiceVM, ClientVM clientVM)> GetInvoiceVMAsync(int id);
 	}
 }

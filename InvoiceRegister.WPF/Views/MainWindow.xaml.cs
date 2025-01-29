@@ -45,7 +45,7 @@ namespace InvoiceRegister.WPF
 			}
 		}
 
-		public async void OpenCreateInvoice_Click(object sender, RoutedEventArgs e)
+		public async void OpenInvoiceCreate_Click(object sender, RoutedEventArgs e)
 		{
 			CreateInvoiceWindow createInvoiceWindow = windowFactory.CreateWindow<CreateInvoiceWindow>(0);
 			createInvoiceWindow.ShowDialog();

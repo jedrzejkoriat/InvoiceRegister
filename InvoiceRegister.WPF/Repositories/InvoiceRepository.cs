@@ -97,7 +97,7 @@ namespace InvoiceRegister.WPF.Repositories
 			await AddAsync(newInvoice);
 		}
 
-		public async Task<InvoiceVM> GetInvoiceVMAsync(int id)
+		public async Task<(InvoiceVM invoiceVM, ClientVM clientVM)> GetInvoiceVMAsync(int id)
 		{
 			var invoiceVM = mapper.Map<InvoiceVM>(await GetAsync(id));
 
@@ -107,7 +107,10 @@ namespace InvoiceRegister.WPF.Repositories
 				.Where(i => i.InvoiceId == invoiceVM.Id)
 				.Sum(i => Math.Round((i.Price * i.Amount) * (1.00m + i.VAT / 100.00m), 2));
 
-			return invoiceVM;
+			int clientId = (await GetAsync(id)).ClientId;
+			var clientVM = mapper.Map<ClientVM>(await clientRepository.GetAsync(clientId));
+
+			return (invoiceVM, clientVM);
 		}
 
 		// Check if NIP has correct format: "INV/XXXX/YY/ZZ/ABC"
