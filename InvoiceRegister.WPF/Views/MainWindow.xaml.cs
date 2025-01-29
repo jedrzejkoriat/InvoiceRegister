@@ -37,9 +37,9 @@ namespace InvoiceRegister.WPF
 			var button = sender as Button;
 			if (button?.Tag is int id)
 			{
-				CreateInvoiceItemWindow createInvoiceItemWindow = windowFactory.CreateWindow<CreateInvoiceItemWindow>(id);
-				await createInvoiceItemWindow.InitializeAsync();
-				createInvoiceItemWindow.ShowDialog();
+				InvoiceDetailsWindow createInvoiceDetailsWindow = windowFactory.CreateWindow<InvoiceDetailsWindow>(id);
+				await createInvoiceDetailsWindow.InitializeAsync();
+				createInvoiceDetailsWindow.ShowDialog();
 				await this.mainWindowVM.InitializeAsync();
 				HideColumns();
 			}

@@ -21,9 +21,9 @@ namespace InvoiceRegister.WPF.Factories
 		{
 			var window = serviceProvider.GetRequiredService<T>();
 
-			if (window is CreateInvoiceItemWindow createWindow)
+			if (window is InvoiceDetailsWindow detailsWindow)
 			{
-				createWindow.Id = id;
+				detailsWindow.Id = id;
 			}
 
 			return window;

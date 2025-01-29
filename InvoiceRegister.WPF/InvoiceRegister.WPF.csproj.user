@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\CreateInvoiceItemWindow.xaml.cs">
+    <Compile Update="Views\InvoiceDetailsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\CreateInvoiceWindow.xaml.cs">
@@ -15,7 +15,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\CreateInvoiceItemWindow.xaml">
+    <Page Update="Views\InvoiceDetailsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\CreateInvoiceWindow.xaml">

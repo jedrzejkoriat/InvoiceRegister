@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace InvoiceRegister.WPF.ViewModels
 {
-	public class CreateInvoiceItemWindowVM : ObservableObject
+	public class InvoiceDetailsWindowVM : ObservableObject
 	{
 		private int Id;
 		private readonly IInvoiceRepository invoiceRepository;
 		private readonly IInvoiceItemRepository invoiceItemRepository;
 		private readonly IPaymentRepository paymentRepository;
-		public CreateInvoiceItemWindowVM(IServiceProvider serviceProvider)
+		public InvoiceDetailsWindowVM(IServiceProvider serviceProvider)
 		{
 			this.invoiceRepository = serviceProvider.GetRequiredService<IInvoiceRepository>();
 			this.invoiceItemRepository = serviceProvider.GetRequiredService<IInvoiceItemRepository>();

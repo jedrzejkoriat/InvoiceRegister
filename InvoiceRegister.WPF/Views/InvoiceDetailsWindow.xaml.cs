@@ -15,20 +15,20 @@ using System.Windows.Shapes;
 
 namespace InvoiceRegister.WPF.Views
 {
-	public partial class CreateInvoiceItemWindow : Window
+	public partial class InvoiceDetailsWindow : Window
 	{
-		private readonly CreateInvoiceItemWindowVM createInvoiceItemWindowVM;
+		private readonly InvoiceDetailsWindowVM invoiceDetailsWindowVM;
 		public int Id { get; set; }
-		public CreateInvoiceItemWindow(CreateInvoiceItemWindowVM createInvoiceItemWindowVM)
+		public InvoiceDetailsWindow(InvoiceDetailsWindowVM invoiceDetailsWindowVM)
 		{
 			InitializeComponent();
-			this.createInvoiceItemWindowVM = createInvoiceItemWindowVM;
-			DataContext = this.createInvoiceItemWindowVM;
+			this.invoiceDetailsWindowVM = invoiceDetailsWindowVM;
+			DataContext = this.invoiceDetailsWindowVM;
 		}
 
 		public async Task InitializeAsync()
 		{
-			await createInvoiceItemWindowVM.InitializeAsync(Id);
+			await invoiceDetailsWindowVM.InitializeAsync(Id);
 		}
 
 		public async void DeleteInvoiceItem_Click(object sender, RoutedEventArgs e)
@@ -36,27 +36,27 @@ namespace InvoiceRegister.WPF.Views
 			var button = sender as Button;
 			if (button?.Tag is int id)
 			{
-				await createInvoiceItemWindowVM.DeleteInvoiceItemAsync(id);
+				await invoiceDetailsWindowVM.DeleteInvoiceItemAsync(id);
 			}
-			await createInvoiceItemWindowVM.RefreshAsync();
+			await invoiceDetailsWindowVM.RefreshAsync();
 		}
 		
 		public async void AddInvoiceItem_Click(object sender, RoutedEventArgs e)
 		{
-			await createInvoiceItemWindowVM.CreateInvoiceItemAsync();
-			await createInvoiceItemWindowVM.RefreshAsync();
+			await invoiceDetailsWindowVM.CreateInvoiceItemAsync();
+			await invoiceDetailsWindowVM.RefreshAsync();
 		}
 
 		public async void DeleteInvoice_Click(object sender, RoutedEventArgs e)
 		{
-			await createInvoiceItemWindowVM.DeleteInvoiceAsync();
+			await invoiceDetailsWindowVM.DeleteInvoiceAsync();
 			this.Close();
 		}
 
 		public async void ChangeStatus_Click(object sender, RoutedEventArgs e)
 		{
-			await createInvoiceItemWindowVM.ChangeInvoiceStatusAsync();
-			await createInvoiceItemWindowVM.RefreshAsync();
+			await invoiceDetailsWindowVM.ChangeInvoiceStatusAsync();
+			await invoiceDetailsWindowVM.RefreshAsync();
 		}
 	}
 }

@@ -58,8 +58,8 @@ namespace InvoiceRegister.WPF
 			services.AddTransient<CreateInvoiceWindowVM>();
 			services.AddTransient<CreateInvoiceWindow>();
 
-			services.AddTransient<CreateInvoiceItemWindowVM>();
-			services.AddTransient<CreateInvoiceItemWindow>();
+			services.AddTransient<InvoiceDetailsWindowVM>();
+			services.AddTransient<InvoiceDetailsWindow>();
 
 			return services.BuildServiceProvider();
 		}
