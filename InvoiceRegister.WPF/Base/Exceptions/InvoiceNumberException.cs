@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace InvoiceRegister.WPF.Base.Exceptions
 {
+	// Exception for incorrect invoice number format
 	class InvoiceNumberException : Exception
 	{
 		public InvoiceNumberException(string message) : base(message) { }

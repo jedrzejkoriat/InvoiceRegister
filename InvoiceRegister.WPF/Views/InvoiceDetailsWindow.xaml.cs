@@ -1,4 +1,5 @@
-﻿using InvoiceRegister.WPF.ViewModels;
+﻿using InvoiceRegister.WPF.Base.Exceptions;
+using InvoiceRegister.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,22 +16,42 @@ using System.Windows.Shapes;
 
 namespace InvoiceRegister.WPF.Views
 {
+	/// <summary>
+	/// 
+	/// This window handles:
+	/// - Displaying invoice items data grid
+	/// - Deleting invoice items
+	/// - Creating invoice items
+	/// - Deleting invoices
+	/// - Changing invoice payment status + Creating payment entities
+	/// 
+	/// </summary>
+
 	public partial class InvoiceDetailsWindow : Window
 	{
+		public int InvoiceId { get; set; }
+
 		private readonly InvoiceDetailsWindowVM invoiceDetailsWindowVM;
-		public int Id { get; set; }
 		public InvoiceDetailsWindow(InvoiceDetailsWindowVM invoiceDetailsWindowVM)
 		{
-			InitializeComponent();
 			this.invoiceDetailsWindowVM = invoiceDetailsWindowVM;
 			DataContext = this.invoiceDetailsWindowVM;
 		}
 
+		// Initialize
 		public async Task InitializeAsync()
 		{
-			await invoiceDetailsWindowVM.InitializeAsync(Id);
+			await invoiceDetailsWindowVM.InitializeAsync(InvoiceId);
+			InitializeComponent();
 		}
 
+		// Hiding columns after the window is loaded
+		public void InvoiceDetailsWindow_Loaded(object sender, RoutedEventArgs e)
+		{
+			HideColumns();
+		}
+
+		// Detele invoice item
 		public async void DeleteInvoiceItem_Click(object sender, RoutedEventArgs e)
 		{
 			var button = sender as Button;
@@ -38,25 +59,74 @@ namespace InvoiceRegister.WPF.Views
 			{
 				await invoiceDetailsWindowVM.DeleteInvoiceItemAsync(id);
 			}
-			await invoiceDetailsWindowVM.RefreshAsync();
+			await RefreshWindowVM();
 		}
 		
+		// Add invoice item
 		public async void AddInvoiceItem_Click(object sender, RoutedEventArgs e)
 		{
-			await invoiceDetailsWindowVM.CreateInvoiceItemAsync();
-			await invoiceDetailsWindowVM.RefreshAsync();
+			// Try creating invoice item and display adequate errors on fail
+			try
+			{
+				await invoiceDetailsWindowVM.CreateInvoiceItemAsync();
+			}
+			catch (InvoiceItemNameException ex)
+			{
+				ErrorText.Text = ex.Message;
+				ErrorText.Height = 20;
+				return;
+			}
+			catch (InvoiceItemAmountException ex)
+			{
+				ErrorText.Text = ex.Message;
+				ErrorText.Height = 20;
+				return;
+			}
+			catch (InvoiceItemPriceException ex)
+			{
+				ErrorText.Text = ex.Message;
+				ErrorText.Height = 20;
+				return;
+			}
+			catch (InvoiceItemVATException ex)
+			{
+				ErrorText.Text = ex.Message;
+				ErrorText.Height = 20;
+				return;
+			}
+
+			// Refresh window and clear errortext on success
+			ErrorText.Text = "";
+			ErrorText.Height = 0;
+			await RefreshWindowVM();
 		}
 
+		// Delete invoice
 		public async void DeleteInvoice_Click(object sender, RoutedEventArgs e)
 		{
 			await invoiceDetailsWindowVM.DeleteInvoiceAsync();
 			this.Close();
 		}
 
+		// Change invoice status to paid
 		public async void ChangeStatus_Click(object sender, RoutedEventArgs e)
 		{
 			await invoiceDetailsWindowVM.ChangeInvoiceStatusAsync();
+			await RefreshWindowVM();
+		}
+
+		// Method for hiding Id columns in the datagrid
+		private void HideColumns()
+		{
+			InvoiceItemsGrid.Columns[1].Visibility = Visibility.Hidden;
+			InvoiceItemsGrid.Columns[2].Visibility = Visibility.Hidden;
+		}
+
+		// Refreshing main window VM after other operations
+		private async Task RefreshWindowVM()
+		{
 			await invoiceDetailsWindowVM.RefreshAsync();
+			HideColumns();
 		}
 	}
 }

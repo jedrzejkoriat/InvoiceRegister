@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InvoiceRegister.WPF.Views"
         mc:Ignorable="d"
-        Title="{Binding InvoiceVM.InvoiceNumber}" Height="450" Width="800">
+        Title="{Binding InvoiceVM.InvoiceNumber}" Height="450" Width="800"
+        Loaded="InvoiceDetailsWindow_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="130"/>
@@ -129,42 +130,45 @@
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Grid Grid.Column="0" Grid.Row="0">
+                    <Grid Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0">
+                        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="" x:Name="ErrorText" Foreground="Red" Height="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                    
+                    <Grid Grid.Column="0" Grid.Row="1">
                         <TextBlock Text="Name:"/>
                     </Grid>
-                    <Grid Grid.Column="0" Grid.Row="1">
+                    <Grid Grid.Column="0" Grid.Row="2">
                         <TextBox Text="{Binding CreateInvoiceItemVM.Name}"/>
                     </Grid>
 
-                    <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid Grid.Column="1" Grid.Row="1">
                         <TextBlock Text="Amount:"/>
                     </Grid>
-                    <Grid Grid.Column="1" Grid.Row="1">
+                    <Grid Grid.Column="1" Grid.Row="2">
                         <TextBox Text="{Binding CreateInvoiceItemVM.Amount}"/>
                     </Grid>
 
-                    <Grid Grid.Column="2" Grid.Row="0">
+                    <Grid Grid.Column="2" Grid.Row="1">
                         <TextBlock Text="Price (unit):"/>
                     </Grid>
-                    <Grid Grid.Column="2" Grid.Row="1">
+                    <Grid Grid.Column="2" Grid.Row="2">
                         <TextBox Text="{Binding CreateInvoiceItemVM.Price}"/>
                     </Grid>
 
-                    <Grid Grid.Column="3" Grid.Row="0">
+                    <Grid Grid.Column="3" Grid.Row="1">
                         <TextBlock Text="VAT:"/>
                     </Grid>
-                    <Grid Grid.Column="3" Grid.Row="1">
+                    <Grid Grid.Column="3" Grid.Row="2">
                         <TextBox Text="{Binding CreateInvoiceItemVM.VAT}"/>
                     </Grid>
 
-                    <Grid Grid.Column="4" Grid.Row="0">
-                        <ListBoxItem>
-                            
-                        </ListBoxItem>
-                    </Grid>
                     <Grid Grid.Column="4" Grid.Row="1">
+                    </Grid>
+                    
+                    <Grid Grid.Column="4" Grid.Row="2">
                         <Button Content="Add" Click="AddInvoiceItem_Click"/>
                     </Grid>
 

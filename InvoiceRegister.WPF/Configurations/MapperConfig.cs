@@ -13,12 +13,15 @@ namespace InvoiceRegister.WPF.Configurations
 	{
 		public MapperConfig()
 		{
+			// Invoice
 			CreateMap<Invoice, InvoiceVM>().ReverseMap();
 			CreateMap<Invoice, CreateInvoiceVM>().ReverseMap();
 
+			// InvoiceItem
 			CreateMap<InvoiceItem, InvoiceItemVM>().ReverseMap();
 			CreateMap<InvoiceItem, CreateInvoiceItemVM>().ReverseMap();
 
+			// Client
 			CreateMap<Client, ClientVM>().ReverseMap();
 		}
 	}

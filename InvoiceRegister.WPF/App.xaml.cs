@@ -3,7 +3,9 @@ using InvoiceRegister.EntityFramework;
 using InvoiceRegister.WPF.Configurations;
 using InvoiceRegister.WPF.Factories;
 using InvoiceRegister.WPF.Interfaces.Repositories;
+using InvoiceRegister.WPF.Interfaces.Services;
 using InvoiceRegister.WPF.Repositories;
+using InvoiceRegister.WPF.Services;
 using InvoiceRegister.WPF.ViewModels;
 using InvoiceRegister.WPF.Views;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +23,7 @@ namespace InvoiceRegister.WPF
 			IServiceProvider serviceProvider = CreateServiceProvider();
 
 			MainWindow mainWindow = serviceProvider.GetRequiredService<MainWindow>();
+
 			// Window initialization for asynchronus operations
 			await mainWindow.InitializeAsync();
 			mainWindow.Show();
@@ -33,7 +36,7 @@ namespace InvoiceRegister.WPF
 		{
 			IServiceCollection services = new ServiceCollection();
 
-			// Db context configuration
+			// Db context
 			services.AddDbContext<AppDbContext>(options =>
 			options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=InvoiceRegister;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False"));
 
@@ -45,20 +48,24 @@ namespace InvoiceRegister.WPF
 
 			// Repositories
 			services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
 			services.AddScoped<IClientRepository, ClientRepository>();
 			services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 			services.AddScoped<IInvoiceItemRepository, InvoiceItemRepository>();
 			services.AddScoped<IPaymentRepository, PaymentRepository>();
 
+			// Services
+			services.AddScoped<IOtherServices, OtherServices>();
+
 			// Views and ViewModels
+			services.AddScoped<MainWindow>();
 			services.AddScoped<MainWindowVM>();
-			services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainWindowVM>(), s.GetRequiredService<IWindowFactory>()));
 
-			services.AddTransient<CreateInvoiceWindowVM>();
 			services.AddTransient<CreateInvoiceWindow>();
+			services.AddTransient<CreateInvoiceWindowVM>();
 
-			services.AddTransient<InvoiceDetailsWindowVM>();
 			services.AddTransient<InvoiceDetailsWindow>();
+			services.AddTransient<InvoiceDetailsWindowVM>();
 
 			return services.BuildServiceProvider();
 		}

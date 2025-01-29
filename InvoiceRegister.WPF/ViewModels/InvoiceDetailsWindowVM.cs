@@ -1,4 +1,5 @@
 ﻿using InvoiceRegister.WPF.Base;
+using InvoiceRegister.WPF.Base.Exceptions;
 using InvoiceRegister.WPF.Interfaces.Repositories;
 using InvoiceRegister.WPF.Models;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,19 +12,35 @@ using System.Threading.Tasks;
 
 namespace InvoiceRegister.WPF.ViewModels
 {
+	/// <summary>
+	/// 
+	/// This window handles:
+	/// - Displaying invoice items data grid
+	/// - Deleting invoice items
+	/// - Creating invoice items
+	/// - Deleting invoices
+	/// - Changing invoice payment status + Creating payment entities
+	/// 
+	/// </summary>
+
 	public class InvoiceDetailsWindowVM : ObservableObject
 	{
-		private int Id;
+		// InvoiceId for initialization
+		private int InvoiceId;
+
 		private readonly IInvoiceRepository invoiceRepository;
 		private readonly IInvoiceItemRepository invoiceItemRepository;
 		private readonly IPaymentRepository paymentRepository;
+		private readonly IClientRepository clientRepository;
 		public InvoiceDetailsWindowVM(IServiceProvider serviceProvider)
 		{
 			this.invoiceRepository = serviceProvider.GetRequiredService<IInvoiceRepository>();
 			this.invoiceItemRepository = serviceProvider.GetRequiredService<IInvoiceItemRepository>();
 			this.paymentRepository = serviceProvider.GetRequiredService<IPaymentRepository>();
+			this.clientRepository = serviceProvider.GetRequiredService<IClientRepository>();
 		}
 
+		// Client info
 		private ClientVM clientVM = new ClientVM();
 		public ClientVM ClientVM
 		{
@@ -35,17 +52,19 @@ namespace InvoiceRegister.WPF.ViewModels
 			}
 		}
 
+		// Invoice info
 		private InvoiceVM invoiceVM = new InvoiceVM();
 		public InvoiceVM InvoiceVM
 		{
 			get => invoiceVM;
 			set
 			{
-				invoiceVM = value; 
+				invoiceVM = value;
 				OnPropertyChanged();
 			}
 		}
 
+		// Invoice items for datagrid
 		private ObservableCollection<InvoiceItemVM> invoiceItemVMs;
 		public ObservableCollection<InvoiceItemVM> InvoiceItemVMs
 		{
@@ -57,6 +76,7 @@ namespace InvoiceRegister.WPF.ViewModels
 			}
 		}
 
+		// Object for handling invoice item creation
 		private CreateInvoiceItemVM createInvoiceItemVM = new CreateInvoiceItemVM();
 		public CreateInvoiceItemVM CreateInvoiceItemVM
 		{
@@ -68,6 +88,7 @@ namespace InvoiceRegister.WPF.ViewModels
 			}
 		}
 
+		// Object used for changing payment status of the invoice
 		private DateTime newPaymentDate = DateTime.Now;
 		public DateTime NewPaymentDate
 		{
@@ -79,40 +100,45 @@ namespace InvoiceRegister.WPF.ViewModels
 			}
 		}
 
+		// Initializes window
 		public async Task InitializeAsync(int id)
 		{
-			this.Id = id;
-			(InvoiceVM, ClientVM) = await invoiceRepository.GetInvoiceVMAsync(this.Id);
-			InvoiceItemVMs = await invoiceItemRepository.GetInvoiceItemVMsAsync(this.Id);
+			this.InvoiceId = id;
+			InvoiceVM = await invoiceRepository.GetInvoiceVMAsync(this.InvoiceId);
+			ClientVM = await clientRepository.GetClientVMAsync(InvoiceVM.ClientId);
+			InvoiceItemVMs = await invoiceItemRepository.GetInvoiceItemVMsAsync(this.InvoiceId);
 		}
 
+		// Refreshes after operations
 		public async Task RefreshAsync()
 		{
-			(InvoiceVM, ClientVM) = await invoiceRepository.GetInvoiceVMAsync(this.Id);
-			InvoiceItemVMs = await invoiceItemRepository.GetInvoiceItemVMsAsync(this.Id);
+			InvoiceVM = await invoiceRepository.GetInvoiceVMAsync(this.InvoiceId);
+			InvoiceItemVMs = await invoiceItemRepository.GetInvoiceItemVMsAsync(this.InvoiceId);
 		}
 
+		// Creates new invoice item
 		public async Task CreateInvoiceItemAsync()
 		{
-			await invoiceItemRepository.CreateInvoiceItemAsync(CreateInvoiceItemVM, this.Id);
+			await invoiceItemRepository.CreateInvoiceItemAsync(CreateInvoiceItemVM, this.InvoiceId);
 		}
 
+		// Deletes invoice item
 		public async Task DeleteInvoiceItemAsync(int id)
 		{
 			await invoiceItemRepository.DeleteInvoiceItemAsync(id);
 		}
 
+		// Deletes invoice
 		public async Task DeleteInvoiceAsync()
 		{
-			await invoiceRepository.DeleteInvoiceAsync(this.Id);
+			await invoiceRepository.DeleteInvoiceAsync(this.InvoiceId);
 		}
 
+		// Creates new payment entity and changes invoice status
 		public async Task ChangeInvoiceStatusAsync()
 		{
-			if (await paymentRepository.CreatePaymentAsync(this.Id, NewPaymentDate))
-			{
-				await invoiceRepository.ChangeStatusAsync(this.Id);
-			}
+			await paymentRepository.CreatePaymentAsync(this.InvoiceId, NewPaymentDate);
+			await invoiceRepository.ChangeInvoiceStatusAsync(this.InvoiceId);
 		}
 	}
 }

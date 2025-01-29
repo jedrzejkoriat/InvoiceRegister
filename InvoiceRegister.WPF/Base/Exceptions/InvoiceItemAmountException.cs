@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace InvoiceRegister.WPF.Base.Exceptions
 {
-	class NIPException : Exception
+	// Exception for incorrect invoice item amount
+	public class InvoiceItemAmountException : Exception
 	{
-		public NIPException(string message) : base(message) { }
+		public InvoiceItemAmountException(string message) : base(message) { }
 	}
 }

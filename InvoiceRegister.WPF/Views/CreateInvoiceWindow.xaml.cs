@@ -16,6 +16,13 @@ using System.Windows.Shapes;
 
 namespace InvoiceRegister.WPF.Views
 {
+	/// <summary>
+	/// 
+	/// This window handles:
+	/// - Creating new invoices
+	/// 
+	/// </summary>
+
 	public partial class CreateInvoiceWindow : Window
 	{
 		private readonly CreateInvoiceWindowVM createInvoiceWindowVM;
@@ -26,13 +33,15 @@ namespace InvoiceRegister.WPF.Views
 			DataContext = this.createInvoiceWindowVM;
 		}
 
+		// Creating new invoice entity
 		public async void CreateInvoice_Click(object sender, RoutedEventArgs e)
 		{
+			// Try creating invoice and display adequate errors on fail
 			try
 			{
 				await this.createInvoiceWindowVM.CreateInvoice();
 			}
-			catch (NIPException ex)
+			catch (InvoiceNIPException ex)
 			{
 				ErrorText.Text = ex.Message;
 				return;
@@ -47,6 +56,8 @@ namespace InvoiceRegister.WPF.Views
 				ErrorText.Text = "Unexpected error occurred.";
 				return;
 			}
+
+			// Close window on success
 			this.Close();
 		}
 	}

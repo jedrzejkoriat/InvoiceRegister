@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace InvoiceRegister.WPF.Base
 {
+	// Base class allowing WindowViewModels to inherit the property change notification logic
 	public abstract class ObservableObject : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged;

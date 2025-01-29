@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InvoiceRegister.EntityFramework")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8f7dc0ddf26351e58df4ba7bbfecd96a7fb7bfa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee4afb8324a1558bee41f766ccd5878608b11112")]
 [assembly: System.Reflection.AssemblyProductAttribute("InvoiceRegister.EntityFramework")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InvoiceRegister.EntityFramework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

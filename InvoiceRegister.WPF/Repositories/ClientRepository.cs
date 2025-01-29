@@ -14,9 +14,16 @@ namespace InvoiceRegister.WPF.Repositories
 {
 	public class ClientRepository : GenericRepository<Client>, IClientRepository
 	{
-
+		private readonly IMapper mapper;
 		public ClientRepository(AppDbContext context, IServiceProvider serviceProvider) : base(context)
 		{
+			this.mapper = serviceProvider.GetRequiredService<IMapper>();
+		}
+
+		// Gets Client view model
+		public async Task<ClientVM> GetClientVMAsync(int id)
+		{
+			return mapper.Map<ClientVM>(await GetAsync(id));
 		}
 	}
 }

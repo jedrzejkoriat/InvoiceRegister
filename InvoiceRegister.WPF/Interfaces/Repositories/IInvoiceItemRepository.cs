@@ -11,8 +11,13 @@ namespace InvoiceRegister.WPF.Interfaces.Repositories
 {
 	public interface IInvoiceItemRepository : IGenericRepository<InvoiceItem>
 	{
+		// Gets the list of invoice items
 		Task<ObservableCollection<InvoiceItemVM>> GetInvoiceItemVMsAsync(int invoiceId);
+
+		// Create new invoice item
 		Task CreateInvoiceItemAsync(CreateInvoiceItemVM createInvoiceItemVM, int invoiceId);
+
+		// Deletes invoice item
 		Task DeleteInvoiceItemAsync(int id);
 	}
 }

@@ -10,6 +10,13 @@ using System.Threading.Tasks;
 
 namespace InvoiceRegister.WPF.ViewModels
 {
+	/// <summary>
+	/// 
+	/// This window handles:
+	/// - Creating new invoices
+	/// 
+	/// </summary>
+
 	public class CreateInvoiceWindowVM : ObservableObject
 	{
 		private readonly IInvoiceRepository invoiceRepository;
@@ -18,6 +25,7 @@ namespace InvoiceRegister.WPF.ViewModels
 			this.invoiceRepository = serviceProvider.GetRequiredService<IInvoiceRepository>();
 		}
 
+		// Object for handling invoice creation
 		private CreateInvoiceVM createInvoiceVM = new CreateInvoiceVM();
 		public CreateInvoiceVM CreateInvoiceVM
 		{
@@ -29,6 +37,7 @@ namespace InvoiceRegister.WPF.ViewModels
 			}
 		}
 
+		// Create invoice
 		public async Task CreateInvoice()
 		{
 			await invoiceRepository.CreateInvoiceAsync(CreateInvoiceVM);

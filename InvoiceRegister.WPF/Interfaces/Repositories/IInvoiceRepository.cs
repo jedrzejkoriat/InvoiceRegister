@@ -11,11 +11,22 @@ namespace InvoiceRegister.WPF.Interfaces.Repositories
 {
 	public interface IInvoiceRepository : IGenericRepository<Invoice>
 	{
+		// Gets single invoice
+		Task<InvoiceVM> GetInvoiceVMAsync(int id);
+
+		// Gets list of all invoices
 		Task<ObservableCollection<InvoiceVM>> GetInvoiceVMsAsync();
-		Task<ObservableCollection<InvoiceVM>> GetFilteredInvoiceVMsAsync(FilterVM filterVM);
+
+		// Creates new invoice
 		Task CreateInvoiceAsync(CreateInvoiceVM createInvoiceVM);
-		Task<(InvoiceVM invoiceVM, ClientVM clientVM)> GetInvoiceVMAsync(int id);
+
+		// Applies filters to invoices
+		Task<ObservableCollection<InvoiceVM>> FilterInvoiceVMsAsync(FilterVM filterVM);
+
+		// Deletes the invoice
 		Task DeleteInvoiceAsync(int id);
-		Task ChangeStatusAsync(int id);
+
+		// Changes payment status of the invoice
+		Task ChangeInvoiceStatusAsync(int id);
 	}
 }

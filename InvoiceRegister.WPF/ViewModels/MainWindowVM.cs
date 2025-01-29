@@ -6,6 +6,14 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 namespace InvoiceRegister.WPF.ViewModels
 {
+	/// <summary>
+	/// 
+	/// This window handles:
+	/// - Displaying invoice datagrid
+	/// - Filtering invoices
+	/// 
+	/// </summary>
+
 	public class MainWindowVM : ObservableObject
 	{
 		private readonly IInvoiceRepository invoiceRepository;
@@ -13,9 +21,9 @@ namespace InvoiceRegister.WPF.ViewModels
 		public MainWindowVM(IServiceProvider serviceProvider)
 		{
 			this.invoiceRepository = serviceProvider.GetRequiredService<IInvoiceRepository>();
-			Debug.Write("");
 		}
 
+		// Invoices for datagrid
 		private ObservableCollection<InvoiceVM> invoiceVMs;
 		public ObservableCollection<InvoiceVM> InvoiceVMs
 		{
@@ -27,6 +35,7 @@ namespace InvoiceRegister.WPF.ViewModels
 			}
 		}
 
+		// Filter data
 		private FilterVM filterVM = new FilterVM();
 		public FilterVM FilterVM
 		{
@@ -38,14 +47,23 @@ namespace InvoiceRegister.WPF.ViewModels
 			}
 		}
 
+		// Initialize window
 		public async Task InitializeAsync()
 		{
 			InvoiceVMs = await invoiceRepository.GetInvoiceVMsAsync();
 		}
 
+		// Refresh invoices and filter
+		public async Task RefreshAsync()
+		{
+			InvoiceVMs = await invoiceRepository.GetInvoiceVMsAsync();
+			FilterVM = new FilterVM();
+		}
+
+		// Apply filter to datagrid
 		public async Task ApplyFilterAsync()
 		{
-			InvoiceVMs = await invoiceRepository.GetFilteredInvoiceVMsAsync(FilterVM);
+			InvoiceVMs = await invoiceRepository.FilterInvoiceVMsAsync(FilterVM);
 		}
 	}
 }
