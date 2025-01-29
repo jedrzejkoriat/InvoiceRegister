@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace InvoiceRegister.EntityFramework.Configurations
 {
+	// Seed configuration for populating clients table
 	public class ClientSeedConfiguration : IEntityTypeConfiguration<Client>
 	{
 		public void Configure(EntityTypeBuilder<Client> builder)

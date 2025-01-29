@@ -46,7 +46,6 @@ namespace InvoiceRegister.WPF
 			// Repositories
 			services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 			services.AddScoped<IClientRepository, ClientRepository>();
-			services.AddScoped<ICompanyServiceRepository, CompanyServiceRepository>();
 			services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 			services.AddScoped<IInvoiceItemRepository, InvoiceItemRepository>();
 			services.AddScoped<IPaymentRepository, PaymentRepository>();
