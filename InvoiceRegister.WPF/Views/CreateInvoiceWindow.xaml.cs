@@ -44,11 +44,13 @@ namespace InvoiceRegister.WPF.Views
 			catch (InvoiceNIPException ex)
 			{
 				ErrorText.Text = ex.Message;
+				NIPWarning.Visibility = Visibility.Visible;
 				return;
 			}
 			catch (InvoiceNumberException ex)
 			{
 				ErrorText.Text = ex.Message;
+				NumberWarning.Visibility = Visibility.Visible;
 				return;
 			}
 			catch

@@ -65,3 +65,4 @@ C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceR
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\Views\CreateInvoiceWindow.baml
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\Views\InvoiceDetailsWindow.g.cs
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\obj\Debug\net8.0-windows\Views\InvoiceDetailsWindow.baml
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\FontAwesome.WPF.dll

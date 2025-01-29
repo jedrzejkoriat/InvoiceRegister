@@ -61,7 +61,7 @@ namespace InvoiceRegister.WPF.Views
 			}
 			await RefreshWindowVM();
 		}
-		
+
 		// Add invoice item
 		public async void AddInvoiceItem_Click(object sender, RoutedEventArgs e)
 		{
@@ -72,32 +72,41 @@ namespace InvoiceRegister.WPF.Views
 			}
 			catch (InvoiceItemNameException ex)
 			{
+				HideErrors();
 				ErrorText.Text = ex.Message;
 				ErrorText.Height = 20;
+				NameWarning.Visibility = Visibility.Visible;
 				return;
 			}
 			catch (InvoiceItemAmountException ex)
 			{
+				HideErrors();
 				ErrorText.Text = ex.Message;
 				ErrorText.Height = 20;
+				AmountWarning.Visibility = Visibility.Visible;
 				return;
 			}
 			catch (InvoiceItemPriceException ex)
 			{
+				HideErrors();
 				ErrorText.Text = ex.Message;
 				ErrorText.Height = 20;
+				PriceWarning.Visibility = Visibility.Visible;
 				return;
 			}
 			catch (InvoiceItemVATException ex)
 			{
+				HideErrors();
 				ErrorText.Text = ex.Message;
 				ErrorText.Height = 20;
+				VATWarning.Visibility = Visibility.Visible;
 				return;
 			}
 
 			// Refresh window and clear errortext on success
 			ErrorText.Text = "";
 			ErrorText.Height = 0;
+
 			await RefreshWindowVM();
 		}
 
@@ -127,6 +136,16 @@ namespace InvoiceRegister.WPF.Views
 		{
 			await invoiceDetailsWindowVM.RefreshAsync();
 			HideColumns();
+		}
+
+		private void HideErrors()
+		{
+			ErrorText.Text = "";
+			ErrorText.Height = 0;
+			NameWarning.Visibility = Visibility.Hidden;
+			AmountWarning.Visibility = Visibility.Hidden;
+			PriceWarning.Visibility = Visibility.Hidden;
+			VATWarning.Visibility = Visibility.Hidden;
 		}
 	}
 }
