@@ -3,95 +3,135 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:faWPF="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
         xmlns:local="clr-namespace:InvoiceRegister.WPF"
         mc:Ignorable="d"
         Title="Invoice Register"
-        Width="1200"
-        Height="700"
-        Loaded="MainWindow_Loaded">
-    <Grid>
+        WindowState="Maximized"
+        Loaded="MainWindow_Loaded" d:DesignHeight="917.88" d:DesignWidth="1919.433">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Common.xaml"/>
+                <ResourceDictionary Source="../Styles/RoundedButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Background="{StaticResource BrushPrimaryBackground}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="15*"/>
+            <RowDefinition Height="20*"/>
             <RowDefinition Height="85*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <Border
+                Background="{StaticResource BrushSecondaryBackground}" 
+                CornerRadius="10" 
+                Margin="10"
+                Padding="10"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch">
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            <Grid Grid.Column="3" Grid.Row="0">
-                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,25" Text="From:"/>
-                <DatePicker SelectedDate="{Binding FilterVM.FromDate, StringFormat=MM/dd/yyyy}" Height="20" Width="120"  VerticalAlignment="Bottom" Margin="0,0,0,5"/>
-                <CheckBox IsChecked="{Binding FilterVM.FromDateToggle}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,8"/>
+                <Grid Grid.Column="0" Grid.Row="1">
+                    <TextBlock VerticalAlignment="Bottom" Margin="20,0,0,25" Text="From date" Foreground="White" FontWeight="Bold"/>
+                    <DatePicker SelectedDate="{Binding FilterVM.FromDate, StringFormat=MM/dd/yyyy}" Height="25" Width="110"  VerticalAlignment="Bottom" Margin="0,0,0,0" BorderBrush="Transparent"/>
+                    <CheckBox IsChecked="{Binding FilterVM.FromDateToggle}" VerticalAlignment="Bottom" Margin="20,0,23,25"  HorizontalAlignment="Right"/>
+                </Grid>
+
+                <Grid Grid.Column="1" Grid.Row="1" >
+                    <TextBlock VerticalAlignment="Bottom" Margin="20,0,0,25" Text="To date" Foreground="White" FontWeight="Bold"/>
+                    <DatePicker SelectedDate="{Binding FilterVM.ToDate, StringFormat=MM/dd/yyyy}" Height="25" Width="110"  VerticalAlignment="Bottom" Margin="0,0,0,0" BorderBrush="Transparent"/>
+                    <CheckBox IsChecked="{Binding FilterVM.ToDateToggle}" VerticalAlignment="Bottom" Margin="20,0,23,25"  HorizontalAlignment="Right"/>
+                </Grid>
+
+                <Grid Grid.Column="2" Grid.Row="1" >
+                    <TextBlock VerticalAlignment="Bottom" Margin="20,0,0,25"  Text="Min Price" Foreground="White" FontWeight="Bold"/>
+                    <TextBox Text="{Binding FilterVM.MinPrice}" Height="20" Width="110"  VerticalAlignment="Bottom" Margin="0,0,0,4" BorderBrush="Transparent"/>
+                    <CheckBox IsChecked="{Binding FilterVM.MinPriceToggle}" VerticalAlignment="Bottom" Margin="20,0,14,25"  HorizontalAlignment="Right"/>
+                </Grid>
+
+                <Grid Grid.Column="3" Grid.Row="1">
+                    <TextBlock VerticalAlignment="Bottom" Margin="20,0,0,25"  Text="Max Price" Foreground="White" FontWeight="Bold"/>
+                    <TextBox Text="{Binding FilterVM.MaxPrice}" Height="20" Width="110"  VerticalAlignment="Bottom" Margin="0,0,0,4" BorderBrush="Transparent"/>
+                    <CheckBox IsChecked="{Binding FilterVM.MaxPriceToggle}" VerticalAlignment="Bottom" Margin="20,0,14,25"  HorizontalAlignment="Right"/>
+                </Grid>
+
+                <Grid Grid.Column="4" Grid.Row="1" >
+                    <TextBlock VerticalAlignment="Bottom" Margin="20,0,0,25"  Text="NIP" Foreground="White" FontWeight="Bold"/>
+                    <TextBox Text="{Binding FilterVM.ClientNIP}" Height="20" Width="110"  VerticalAlignment="Bottom" Margin="0,0,0,4" BorderBrush="Transparent"/>
+                    <CheckBox IsChecked="{Binding FilterVM.ClientNIPToggle}" VerticalAlignment="Bottom" Margin="20,0,14,25"  HorizontalAlignment="Right"/>
+                </Grid>
+
+                <Grid Grid.Column="5" Grid.Row="1" >
+                    <TextBlock VerticalAlignment="Bottom" Margin="20,0,0,25"  Text="Company Name" Foreground="White" FontWeight="Bold"/>
+                    <TextBox Text="{Binding FilterVM.ClientName}" Height="20" Width="110"  VerticalAlignment="Bottom" Margin="0,0,0,4" BorderBrush="Transparent"/>
+                    <CheckBox IsChecked="{Binding FilterVM.ClientNameToggle}" VerticalAlignment="Bottom" Margin="20,0,14,25"  HorizontalAlignment="Right"/>
+                </Grid>
+
+                <Grid Grid.Column="6" Grid.Row="1">
+                    <TextBlock  VerticalAlignment="Bottom" Margin="0,0,0,25" Text="Overdue Payments" Foreground="White" FontWeight="Bold"/>
+                    <CheckBox IsChecked="{Binding FilterVM.OverduePaymentToggle}" VerticalAlignment="Bottom" Margin="20,0,17,25"  HorizontalAlignment="Right"/>
+                </Grid>
+
+                <Button Grid.Column="0" Grid.Row="0" Content="Create" VerticalAlignment="Center" Height="20" Width="120" Click="OpenInvoiceCreate_Click"/>
+                <Button Grid.Column="7" Grid.Row="1"  Content="Fliter" VerticalAlignment="Bottom" Margin="0,0,0,5" Height="20" Width="120" Click="Filter_Click" />
             </Grid>
+        </Border>
 
-            <Grid Grid.Column="3" Grid.Row="1" >
-                <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,25" Text="To:"/>
-                <DatePicker SelectedDate="{Binding FilterVM.ToDate, StringFormat=MM/dd/yyyy}" Height="20" Width="120"  VerticalAlignment="Bottom" Margin="0,0,0,5"/>
-                <CheckBox IsChecked="{Binding FilterVM.ToDateToggle}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,8"/>
+
+        <Border Grid.Row="1"
+                Background="{StaticResource BrushSecondaryBackground}" 
+                CornerRadius="10" 
+                Margin="10"
+                Padding="10"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch">
+            <Grid Grid.Row="1" >
+                <DataGrid ItemsSource="{Binding InvoiceVMs}" x:Name="InvoicesGrid" IsReadOnly="True" Background="{StaticResource BrushSecondaryBackground}" BorderBrush="Transparent">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Click="OpenInvoiceDetails_Click">
+                                        <Button.Content>
+                                            <faWPF:FontAwesome Icon="InfoCircle" Foreground="RoyalBlue"/>
+                                        </Button.Content>
+                                        <Button.Tag>
+                                            <Binding Path="Id" />
+                                        </Button.Tag>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Invoice Number" Binding="{Binding InvoiceNumber}" Width="10*"/>
+                        <DataGridTextColumn Header="Price Gross" Binding="{Binding PriceGross}" Width="10*"/>
+                        <DataGridTextColumn Header="Issue Date" Binding="{Binding IssueDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="10*"/>
+                        <DataGridTextColumn Header="Sale Date" Binding="{Binding SaleDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="10*"/>
+                        <DataGridTextColumn Header="Payment Due Date" Binding="{Binding PaymentDueDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="10*"/>
+                        <DataGridTextColumn Header="Payment Status" Binding="{Binding IsPaid}" Width="10*"/>
+                        <DataGridTextColumn Header="Payment Date" Binding="{Binding PaymentDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="10*"/>
+                        <DataGridTextColumn Header="Client" Binding="{Binding ClientName}" Width="10*"/>
+                        <DataGridTextColumn Header="NIP" Binding="{Binding ClientNIP}" Width="10*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
-
-            <Grid Grid.Column="4" Grid.Row="0" >
-                <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,25" Text="Min Price"/>
-                <TextBox Text="{Binding FilterVM.MinPrice}" Height="20" Width="120"  VerticalAlignment="Bottom" Margin="0,0,0,5"/>
-                <CheckBox IsChecked="{Binding FilterVM.MinPriceToggle}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,8"/>
-            </Grid>
-
-            <Grid Grid.Column="4" Grid.Row="1">
-                <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,25" Text="Max Price"/>
-                <TextBox Text="{Binding FilterVM.MaxPrice}" Height="20" Width="120"  VerticalAlignment="Bottom" Margin="0,0,0,5"/>
-                <CheckBox IsChecked="{Binding FilterVM.MaxPriceToggle}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,8"/>
-            </Grid>
-
-            <Grid Grid.Column="5" Grid.Row="0" >
-                <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,25" Text="NIP"/>
-                <TextBox Text="{Binding FilterVM.ClientNIP}" Height="20" Width="120"  VerticalAlignment="Bottom" Margin="0,0,0,5"/>
-                <CheckBox IsChecked="{Binding FilterVM.ClientNIPToggle}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,8"/>
-            </Grid>
-
-            <Grid Grid.Column="5" Grid.Row="1" >
-                <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,25" Text="Company Name"/>
-                <TextBox Text="{Binding FilterVM.ClientName}" Height="20" Width="120"  VerticalAlignment="Bottom" Margin="0,0,0,5"/>
-                <CheckBox IsChecked="{Binding FilterVM.ClientNameToggle}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,8"/>
-            </Grid>
-
-            <Grid Grid.Column="6" Grid.Row="0">
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,9" Text="Overdue Payments"/>
-                <CheckBox IsChecked="{Binding FilterVM.OverduePaymentToggle}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,8"/>
-            </Grid>
-
-            <Button Grid.Column="0" Grid.Row="0" Content="Create" VerticalAlignment="Center" Height="20" Width="120" Click="OpenInvoiceCreate_Click"/>
-            <Button Grid.Column="6" Grid.Row="1"  Content="Fliter" VerticalAlignment="Bottom" Margin="0,0,0,5" Height="20" Width="120" Click="Filter_Click"/>
-        </Grid>
-
-        <Grid Grid.Row="1">
-            <DataGrid ItemsSource="{Binding InvoiceVMs}" x:Name="InvoicesGrid" IsReadOnly="True">
-                <DataGrid.Columns>
-                    <DataGridTemplateColumn Header="Action">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="Details" Click="OpenInvoiceDetails_Click">
-                                    <Button.Tag>
-                                        <Binding Path="Id" />
-                                    </Button.Tag>
-                                </Button>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-        </Grid>
+        </Border>
     </Grid>
 </Window>

@@ -6,120 +6,153 @@
         xmlns:faWPF="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
         xmlns:local="clr-namespace:InvoiceRegister.WPF.Views"
         mc:Ignorable="d"
-        Title="{Binding InvoiceVM.InvoiceNumber}" Height="450" Width="800"
-        Loaded="InvoiceDetailsWindow_Loaded">
-    <Grid>
+        Title="{Binding InvoiceVM.InvoiceNumber}" Height="550" Width="800"
+        Loaded="InvoiceDetailsWindow_Loaded"
+        WindowStartupLocation="CenterOwner">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Common.xaml"/>
+                <ResourceDictionary Source="../Styles/RoundedButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Background="{StaticResource BrushPrimaryBackground}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="130"/>
+            <RowDefinition Height="160"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20*"/>
-                <ColumnDefinition Width="40*"/>
-                <ColumnDefinition Width="40*"/>
-            </Grid.ColumnDefinitions>
+        <Border
+                Background="{StaticResource BrushSecondaryBackground}" 
+                CornerRadius="10" 
+                Margin="10"
+                Padding="10"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch">
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="40*"/>
+                </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0">
-                    <Grid.Resources>
-                        <Style TargetType="StackPanel">
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding InvoiceVM.IsPaid}" Value="True">
-                                    <Setter Property="Visibility" Value="Collapsed"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
+                    <Grid Grid.Row="0">
+                        <Grid.Resources>
+                            <Style TargetType="StackPanel">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding InvoiceVM.IsPaid}" Value="True">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
 
-                        <Style TargetType="TextBlock">
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding InvoiceVM.IsPaid}" Value="False">
-                                    <Setter Property="Visibility" Value="Collapsed"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Grid.Resources>
+                            <Style TargetType="Button">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding InvoiceVM.IsPaid}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Resources>
 
-                    <StackPanel>
-                        <Button Content="Change Status" Click="ChangeStatus_Click" Width="100" Height="20" Margin="0,10,0,0" VerticalAlignment="Top"/>
-                        <DatePicker SelectedDate="{Binding NewPaymentDate}" Margin="0,10,0,0" Width="100" VerticalAlignment="Top"/>
-                    </StackPanel>
-                    <TextBlock  Text="Invoice Paid" Foreground="White" Background="Green" Padding="3" TextAlignment="Center" FontWeight="Bold"
-                                Width="100" Height="20" VerticalAlignment="Center"/>
+                        <Button Style="{DynamicResource RoundedButtonStyle}" Content="Invoice Paid" Foreground="White" Background="Green" Padding="3" FontWeight="Bold"
+                                Width="100" Height="20" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                        <StackPanel>
+                            <Button Style="{DynamicResource RoundedButtonStyle}" Content="Change Status" Click="ChangeStatus_Click" Width="100" Height="20" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                            <DatePicker SelectedDate="{Binding NewPaymentDate}" Margin="0,10,0,0" Width="100" VerticalAlignment="Top"/>
+                        </StackPanel>
+                    </Grid>
+
+
+                    <Grid Grid.Row="1">
+                        <Button Style="{DynamicResource RoundedButtonStyle}"
+                                Content="Delete Invoice" 
+                                Click="DeleteInvoice_Click"
+                                Width="100"
+                                Height="18"
+                                Background="Red" 
+                                Foreground="White" 
+                                FontWeight="Bold"
+                                VerticalAlignment="Bottom" 
+                                TextBlock.TextAlignment="Center"/>
+                    </Grid>
                 </Grid>
 
+                <Grid Grid.Column="1">
+                    <TextBlock Margin="0,5,0,0">
+                    <Run Text="Invoice Number: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding InvoiceVM.InvoiceNumber}" Foreground="White" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Margin="0,25,0,0">
+                    <Run Text="Issue Date: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding InvoiceVM.IssueDate}" Foreground="White" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Margin="0,45,0,0">
+                    <Run Text="Price Gross: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding InvoiceVM.PriceGross}" Foreground="White" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Margin="0,65,0,0">
+                    <Run Text="Sale Date: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding InvoiceVM.SaleDate}" Foreground="White" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Margin="0,85,0,0">
+                    <Run Text="Payment Date: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding InvoiceVM.PaymentDate}" Foreground="White" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Margin="0,105,0,0">
+                    <Run Text="Payment Due Date: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding InvoiceVM.PaymentDueDate}" Foreground="White" FontWeight="Bold"/>
+                    </TextBlock>
+                </Grid>
 
-                <Grid Grid.Row="1">
-                    <Button Content="Delete Invoice" Click="DeleteInvoice_Click" Width="100" Height="20"/>
+                <Grid Grid.Column="2">
+                    <TextBlock Margin="0,5,0,0">
+                    <Run Text="Client: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding ClientVM.Name}" Foreground="White" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Margin="0,25,0,0">
+                    <Run Text="NIP: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding ClientVM.NIP}" Foreground="White" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Margin="0,45,0,0">
+                    <Run Text="Email: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding ClientVM.Email}" Foreground="White" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Margin="0,65,0,0">
+                    <Run Text="City: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding ClientVM.City}" Foreground="White" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Margin="0,85,0,0">
+                    <Run Text="Post Code: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding ClientVM.PostCode}" Foreground="White" FontWeight="Bold"/>
+                    </TextBlock>
+                    <TextBlock Margin="0,105,0,0">
+                    <Run Text="Street: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding ClientVM.Street}" Foreground="White" FontWeight="Bold"/>
+                    </TextBlock>
                 </Grid>
             </Grid>
-
-            <Grid Grid.Column="1">
-                <TextBlock Margin="0,5,0,0">
-                    <Run Text="Invoice Number: "/>
-                    <Run Text="{Binding InvoiceVM.InvoiceNumber}"/>
-                </TextBlock>
-                <TextBlock Margin="0,25,0,0">
-                    <Run Text="Issue Date: "/>
-                    <Run Text="{Binding InvoiceVM.IssueDate}"/>
-                </TextBlock>
-                <TextBlock Margin="0,45,0,0">
-                    <Run Text="Price Gross: "/>
-                    <Run Text="{Binding InvoiceVM.PriceGross}"/>
-                </TextBlock>
-                <TextBlock Margin="0,65,0,0">
-                    <Run Text="Sale Date: "/>
-                    <Run Text="{Binding InvoiceVM.SaleDate}"/>
-                </TextBlock>
-                <TextBlock Margin="0,85,0,0">
-                    <Run Text="Payment Date: "/>
-                    <Run Text="{Binding InvoiceVM.PaymentDate}"/>
-                </TextBlock>
-                <TextBlock Margin="0,105,0,0">
-                    <Run Text="Payment Due Date: "/>
-                    <Run Text="{Binding InvoiceVM.PaymentDueDate}"/>
-                </TextBlock>
-            </Grid>
-
-            <Grid Grid.Column="2">
-                <TextBlock Margin="0,5,0,0">
-                    <Run Text="Client Name: "/>
-                    <Run Text="{Binding ClientVM.Name}"/>
-                </TextBlock>
-                <TextBlock Margin="0,25,0,0">
-                    <Run Text="NIP: "/>
-                    <Run Text="{Binding ClientVM.NIP}"/>
-                </TextBlock>
-                <TextBlock Margin="0,45,0,0">
-                    <Run Text="Email: "/>
-                    <Run Text="{Binding ClientVM.Email}"/>
-                </TextBlock>
-                <TextBlock Margin="0,65,0,0">
-                    <Run Text="City: "/>
-                    <Run Text="{Binding ClientVM.City}"/>
-                </TextBlock>
-                <TextBlock Margin="0,85,0,0">
-                    <Run Text="Post Code: "/>
-                    <Run Text="{Binding ClientVM.PostCode}"/>
-                </TextBlock>
-                <TextBlock Margin="0,105,0,0">
-                    <Run Text="Street: "/>
-                    <Run Text="{Binding ClientVM.Street}"/>
-                </TextBlock>
-            </Grid>
-
-        </Grid>
+        </Border>
 
         <Grid Grid.Row="1">
-            <Expander Header="Expand">
-                <Grid Background="LightGray">
+            <Border
+                Background="{StaticResource BrushSecondaryBackground}" 
+                CornerRadius="10" 
+                Margin="10"
+                Padding="10"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -135,11 +168,11 @@
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0">
-                        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="" x:Name="ErrorText" Foreground="Red" Height="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="" x:Name="ErrorText" Foreground="Red" FontWeight="Bold" Height="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </Grid>
 
                     <Grid Grid.Column="0" Grid.Row="1">
-                        <TextBlock Text="Name:"/>
+                        <TextBlock Text="Name:" Foreground="White" FontWeight="Bold"/>
                     </Grid>
                     <Grid Grid.Column="0" Grid.Row="2">
                         <TextBox Text="{Binding CreateInvoiceItemVM.Name}" HorizontalAlignment="Left" Width="135"/>
@@ -148,7 +181,7 @@
                     </Grid>
 
                     <Grid Grid.Column="1" Grid.Row="1">
-                        <TextBlock Text="Amount:"/>
+                        <TextBlock Text="Amount:" Foreground="White" FontWeight="Bold"/>
                     </Grid>
                     <Grid Grid.Column="1" Grid.Row="2">
                         <Grid.RowDefinitions>
@@ -162,7 +195,7 @@
                     </Grid>
 
                     <Grid Grid.Column="2" Grid.Row="1">
-                        <TextBlock Text="Price (unit):"/>
+                        <TextBlock Text="Price (unit):" Foreground="White" FontWeight="Bold"/>
                     </Grid>
                     <Grid Grid.Column="2" Grid.Row="2">
                         <TextBox Text="{Binding CreateInvoiceItemVM.Price}" HorizontalAlignment="Left" Width="135"/>
@@ -171,7 +204,7 @@
                     </Grid>
 
                     <Grid Grid.Column="3" Grid.Row="1">
-                        <TextBlock Text="VAT:"/>
+                        <TextBlock Text="VAT:" Foreground="White" FontWeight="Bold"/>
                     </Grid>
                     <Grid Grid.Column="3" Grid.Row="2">
                         <TextBox Text="{Binding CreateInvoiceItemVM.VAT}" HorizontalAlignment="Left" Width="135"/>
@@ -183,29 +216,50 @@
                     </Grid>
 
                     <Grid Grid.Column="4" Grid.Row="2">
-                        <Button Content="Add" Click="AddInvoiceItem_Click"/>
+                        <Button Style="{DynamicResource RoundedButtonStyle}"
+                                Content="Add" 
+                                Click="AddInvoiceItem_Click"
+                                Width="100" Height="18" 
+                                Background="Green" 
+                                Foreground="White"
+                                FontWeight="Bold"
+                                VerticalAlignment="Bottom" 
+                                TextBlock.TextAlignment="Center"/>
                     </Grid>
 
                 </Grid>
-            </Expander>
+            </Border>
         </Grid>
 
         <Grid Grid.Row="2">
-            <DataGrid ItemsSource="{Binding InvoiceItemVMs}" x:Name="InvoiceItemsGrid" IsReadOnly="True">
-                <DataGrid.Columns>
-                    <DataGridTemplateColumn Header="Action">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="Delete" Click="DeleteInvoiceItem_Click">
-                                    <Button.Tag>
-                                        <Binding Path="Id" />
-                                    </Button.Tag>
-                                </Button>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
+            <Border
+                Background="{StaticResource BrushSecondaryBackground}" 
+                CornerRadius="10" 
+                Margin="10"
+                Padding="10"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch">
+                <DataGrid ItemsSource="{Binding InvoiceItemVMs}" x:Name="InvoiceItemsGrid" IsReadOnly="True" Background="{StaticResource BrushPrimaryBackground}">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Delete" Click="DeleteInvoiceItem_Click">
+                                        <Button.Tag>
+                                            <Binding Path="Id" />
+                                        </Button.Tag>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="10*"/>
+                        <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Width="10*"/>
+                        <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="10*"/>
+                        <DataGridTextColumn Header="VAT" Binding="{Binding VAT}" Width="10*"/>
+                        <DataGridTextColumn Header="Price Gross" Binding="{Binding PriceGross}" Width="10*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
         </Grid>
     </Grid>
 </Window>

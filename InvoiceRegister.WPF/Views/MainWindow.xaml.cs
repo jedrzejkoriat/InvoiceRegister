@@ -53,9 +53,10 @@ namespace InvoiceRegister.WPF
 			var button = sender as Button;
 			if (button?.Tag is int id)
 			{
-				InvoiceDetailsWindow createInvoiceDetailsWindow = windowFactory.CreateWindow<InvoiceDetailsWindow>(id);
-				await createInvoiceDetailsWindow.InitializeAsync();
-				createInvoiceDetailsWindow.ShowDialog();
+				InvoiceDetailsWindow invoiceDetailsWindow = windowFactory.CreateWindow<InvoiceDetailsWindow>(id);
+				await invoiceDetailsWindow.InitializeAsync();
+				invoiceDetailsWindow.Owner = this;
+				invoiceDetailsWindow.ShowDialog();
 
 				await RefreshWindowVM();
 			}
@@ -65,6 +66,7 @@ namespace InvoiceRegister.WPF
 		public async void OpenInvoiceCreate_Click(object sender, RoutedEventArgs e)
 		{
 			CreateInvoiceWindow createInvoiceWindow = windowFactory.CreateWindow<CreateInvoiceWindow>(0);
+			createInvoiceWindow.Owner = this;
 			createInvoiceWindow.ShowDialog();
 
 			await RefreshWindowVM();
@@ -80,8 +82,10 @@ namespace InvoiceRegister.WPF
 		// Method for hiding Id columns in the datagrid
 		private void HideColumns()
 		{
-			InvoicesGrid.Columns[1].Visibility = Visibility.Hidden;
-			InvoicesGrid.Columns[2].Visibility = Visibility.Hidden;
+			for (int i = 10; i < InvoicesGrid.Columns.Count; i++)
+			{
+				InvoicesGrid.Columns[i].Visibility = Visibility.Hidden;
+			}
 		}
 
 		// Refreshing main window VM after other operations

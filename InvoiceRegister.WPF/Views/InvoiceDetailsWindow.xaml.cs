@@ -127,8 +127,10 @@ namespace InvoiceRegister.WPF.Views
 		// Method for hiding Id columns in the datagrid
 		private void HideColumns()
 		{
-			InvoiceItemsGrid.Columns[1].Visibility = Visibility.Hidden;
-			InvoiceItemsGrid.Columns[2].Visibility = Visibility.Hidden;
+			for (int i = 6; i < InvoiceItemsGrid.Columns.Count; i++)
+			{
+				InvoiceItemsGrid.Columns[i].Visibility = Visibility.Hidden;
+			}
 		}
 
 		// Refreshing main window VM after other operations

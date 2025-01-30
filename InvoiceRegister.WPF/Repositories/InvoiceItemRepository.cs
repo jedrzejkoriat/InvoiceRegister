@@ -24,8 +24,15 @@ namespace InvoiceRegister.WPF.Repositories
 
 		// Get the list of invoice items
 		public async Task<ObservableCollection<InvoiceItemVM>> GetInvoiceItemVMsAsync(int invoiceId)
-		{
-			return mapper.Map<ObservableCollection<InvoiceItemVM>>((await GetAllAsync()).Where(i => i.InvoiceId == invoiceId));
+		{	
+			var invoiceItem = mapper.Map<ObservableCollection<InvoiceItemVM>>((await GetAllAsync()).Where(i => i.InvoiceId == invoiceId));
+
+			foreach (var item in invoiceItem)
+			{
+				item.PriceGross = Math.Round((item.Price * item.Amount) * (1m + item.VAT / 100m),2);
+			}
+
+			return invoiceItem;
 		}
 
 		// Creates invoice item

@@ -6,38 +6,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InvoiceRegister.WPF.Views"
         mc:Ignorable="d"
-        Title="Create new invoice" Height="200" Width="400">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="60*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+        Title="Create new invoice" Height="300" Width="500"
+        WindowStartupLocation="CenterOwner">
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Invoice Number" VerticalAlignment="Center" Margin="10,0,0,0"/>
-        <faWPF:FontAwesome  Grid.Row="0" Grid.Column="0" Visibility="Hidden" Icon="ExclamationCircle" Foreground="Red" Width="20" Height="20" 
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Common.xaml"/>
+                <ResourceDictionary Source="../Styles/RoundedButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Background="{StaticResource BrushPrimaryBackground}">
+        <Border
+                Background="{StaticResource BrushSecondaryBackground}" 
+                CornerRadius="10" 
+                Margin="10"
+                Padding="10"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="60*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Invoice Number" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
+            <faWPF:FontAwesome  Grid.Row="0" Grid.Column="0" Visibility="Hidden" Icon="ExclamationCircle" Foreground="Red" Width="20" Height="20" 
                            VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,10,0,0" x:Name="NumberWarning"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Client NIP" VerticalAlignment="Center" Margin="10,0,0,0"/>
-        <faWPF:FontAwesome Grid.Row="1" Grid.Column="0" Visibility="Hidden" Icon="ExclamationCircle" Foreground="Red" Width="20" Height="20" 
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Client NIP" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
+            <faWPF:FontAwesome Grid.Row="1" Grid.Column="0" Visibility="Hidden" Icon="ExclamationCircle" Foreground="Red" Width="20" Height="20" 
                            VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,10,0,0" x:Name="NIPWarning"/>
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Issue Date" VerticalAlignment="Center" Margin="10,0,0,0"/>
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Sale Date" VerticalAlignment="Center" Margin="10,0,0,0"/>
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="Payment due Date" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Issue Date" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Sale Date" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Payment due Date" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
 
-        <TextBox Text="{Binding CreateInvoiceVM.InvoiceNumber}"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10, 0"/>
-        <TextBox Text="{Binding CreateInvoiceVM.ClientNIP}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10, 0"/>
-        <DatePicker SelectedDate="{Binding CreateInvoiceVM.IssueDate, StringFormat=MM/dd/yyyy}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10, 0"/>
-        <DatePicker SelectedDate="{Binding CreateInvoiceVM.SaleDate, StringFormat=MM/dd/yyyy}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10, 0"/>
-        <DatePicker SelectedDate="{Binding CreateInvoiceVM.PaymentDueDate, StringFormat=MM/dd/yyyy}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10, 0"/>
+            <TextBox Text="{Binding CreateInvoiceVM.InvoiceNumber}"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10,0" BorderBrush="Transparent"/>
+            <TextBox Text="{Binding CreateInvoiceVM.ClientNIP}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10,0" BorderBrush="Transparent"/>
+            <DatePicker SelectedDate="{Binding CreateInvoiceVM.IssueDate, StringFormat=MM/dd/yyyy}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10, 0" BorderBrush="Transparent"/>
+            <DatePicker SelectedDate="{Binding CreateInvoiceVM.SaleDate, StringFormat=MM/dd/yyyy}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10, 0" BorderBrush="Transparent"/>
+            <DatePicker SelectedDate="{Binding CreateInvoiceVM.PaymentDueDate, StringFormat=MM/dd/yyyy}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10, 0" BorderBrush="Transparent"/>
 
-        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="" x:Name="ErrorText" Foreground="Red" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Button Grid.Row="5" Grid.Column="1" Width="100" Height="20" HorizontalAlignment="Right" Margin="0,0,10,0" Content="Add Invoice" Click="CreateInvoice_Click"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="" x:Name="ErrorText" Foreground="Red" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="5" Grid.Column="1" Width="100" Height="20" HorizontalAlignment="Right" Margin="0,0,10,0" Content="Add Invoice" Click="CreateInvoice_Click"/>
+        </Grid>
+        </Border>
     </Grid>
 </Window>

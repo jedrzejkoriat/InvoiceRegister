@@ -15,6 +15,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Styles\Common.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\RoundedButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\InvoiceDetailsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
