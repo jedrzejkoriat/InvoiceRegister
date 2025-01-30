@@ -17,6 +17,9 @@ namespace InvoiceRegister.WPF.Interfaces.Repositories
 		// Gets list of all invoices
 		Task<ObservableCollection<InvoiceVM>> GetInvoiceVMsAsync();
 
+		// Gets list of overdue invoices
+		Task<List<OverdueInvoiceVM>> GetOverdueInvoiceVMsAsync();
+
 		// Creates new invoice
 		Task CreateInvoiceAsync(CreateInvoiceVM createInvoiceVM);
 

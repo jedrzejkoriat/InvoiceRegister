@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InvoiceRegister.WPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d692fc36e6e89f025d889265a92ef48889e78b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99f342626c74033728893e69dc11686022c9b464")]
 [assembly: System.Reflection.AssemblyProductAttribute("InvoiceRegister.WPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InvoiceRegister.WPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

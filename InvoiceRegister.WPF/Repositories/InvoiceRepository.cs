@@ -49,6 +49,26 @@ namespace InvoiceRegister.WPF.Repositories
 			return invoiceVMs;
 		}
 
+		// Applies filters to invoices
+		public async Task<List<OverdueInvoiceVM>> GetOverdueInvoiceVMsAsync()
+		{
+			var invoiceVMs = mapper.Map<List<OverdueInvoiceVM>>((await GetAllAsync()).Where(i => i.IsPaid == false && i.PaymentDueDate < DateTime.UtcNow));
+
+			foreach (var invoice in invoiceVMs)
+			{
+				// Gets the overall gross price of the invoice
+				invoice.PriceGross = (await invoiceItemRepository.GetAllAsync())
+					.Where(i => i.InvoiceId == invoice.Id)
+					.Sum(i => Math.Round((i.Price * i.Amount) * (1.00m + i.VAT / 100.00m), 2));
+
+				// Gets the client data
+				var client = await clientRepository.GetAsync(invoice.ClientId);
+				invoice.Email = client.Email;
+			}
+
+			return invoiceVMs;
+		}
+
 		// Creates new invoice
 		public async Task CreateInvoiceAsync(CreateInvoiceVM createInvoiceVM)
 		{

@@ -71,7 +71,8 @@ namespace InvoiceRegister.WPF.ViewModels
 
 		public async Task SendWarningEmailsAsync()
 		{
-			await emailSenderService.SendWarningEmailsAsync();
+			List<OverdueInvoiceVM> overdueInvoices = await invoiceRepository.GetOverdueInvoiceVMsAsync();
+			await emailSenderService.SendWarningEmailsAsync(overdueInvoices);
 		}
 	}
 }

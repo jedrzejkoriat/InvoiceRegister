@@ -67,8 +67,12 @@ namespace InvoiceRegister.WPF
 			services.AddScoped<IInvoiceItemRepository, InvoiceItemRepository>();
 			services.AddScoped<IPaymentRepository, PaymentRepository>();
 
+			// Send grid connection string and email
+			string sendGridConnectionString = configuration.GetConnectionString("SendGridConnectionString");
+			string sendFromEmailAddress = configuration.GetConnectionString("SendFromEmail");
+
 			// Services
-			services.AddScoped<IEmailSenderService, EmailSenderService>();
+			services.AddScoped<IEmailSenderService, EmailSenderService>(provider => new EmailSenderService(sendGridConnectionString, sendFromEmailAddress));
 
 			// Views and ViewModels
 			services.AddScoped<MainWindow>();

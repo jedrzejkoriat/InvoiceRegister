@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InvoiceRegister.WPF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace InvoiceRegister.WPF.Interfaces.Services
 {
     public interface IEmailSenderService
     {
-        Task SendWarningEmailsAsync();
+        Task SendWarningEmailsAsync(List<OverdueInvoiceVM> overdueInvoices);
     }
 }
