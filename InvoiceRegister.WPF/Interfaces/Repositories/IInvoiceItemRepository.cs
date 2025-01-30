@@ -19,5 +19,8 @@ namespace InvoiceRegister.WPF.Interfaces.Repositories
 
 		// Deletes invoice item
 		Task DeleteInvoiceItemAsync(int id);
+
+		// Get the invoice items, value net and value vat for pdf generating
+		Task<(List<InvoiceItemVM> invoiceVMs, decimal valueNet, decimal valueVAT)> GetInvoiceItemsForPdfVM(int invoiceId);
 	}
 }

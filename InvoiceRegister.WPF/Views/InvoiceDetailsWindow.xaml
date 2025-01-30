@@ -76,6 +76,15 @@
 
                     <Grid Grid.Row="1">
                         <Button Style="{DynamicResource RoundedButtonStyle}"
+                                Content="Generate Invoice" 
+                                Click="GeneratePDF_Click"
+                                Width="100"
+                                Height="18"
+                                FontWeight="Bold"
+                                Margin="0,0,0,30"
+                                VerticalAlignment="Bottom" 
+                                TextBlock.TextAlignment="Center"/>
+                        <Button Style="{DynamicResource RoundedButtonStyle}"
                                 Content="Delete Invoice" 
                                 Click="DeleteInvoice_Click"
                                 Width="100"
@@ -94,24 +103,24 @@
                     <Run Text="{Binding InvoiceVM.InvoiceNumber}" Foreground="White" FontWeight="Bold"/>
                     </TextBlock>
                     <TextBlock Margin="0,25,0,0">
-                    <Run Text="Issue Date: " Foreground="White" FontWeight="Bold"/>
-                    <Run Text="{Binding InvoiceVM.IssueDate}" Foreground="White" FontWeight="Bold"/>
-                    </TextBlock>
-                    <TextBlock Margin="0,45,0,0">
                     <Run Text="Price Gross: " Foreground="White" FontWeight="Bold"/>
                     <Run Text="{Binding InvoiceVM.PriceGross}" Foreground="White" FontWeight="Bold"/>
                     </TextBlock>
+                    <TextBlock Margin="0,45,0,0">
+                    <Run Text="Issue Date: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding InvoiceVM.IssueDate, StringFormat='{}{0:dd-MM-yyyy}'}" Foreground="White" FontWeight="Bold"/>
+                    </TextBlock>
                     <TextBlock Margin="0,65,0,0">
                     <Run Text="Sale Date: " Foreground="White" FontWeight="Bold"/>
-                    <Run Text="{Binding InvoiceVM.SaleDate}" Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding InvoiceVM.SaleDate, StringFormat='{}{0:dd-MM-yyyy}'}" Foreground="White" FontWeight="Bold"/>
                     </TextBlock>
                     <TextBlock Margin="0,85,0,0">
-                    <Run Text="Payment Date: " Foreground="White" FontWeight="Bold"/>
-                    <Run Text="{Binding InvoiceVM.PaymentDate}" Foreground="White" FontWeight="Bold"/>
+                    <Run Text="Payment Due Date: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding InvoiceVM.PaymentDueDate, StringFormat='{}{0:dd-MM-yyyy}'}" Foreground="White" FontWeight="Bold"/>
                     </TextBlock>
                     <TextBlock Margin="0,105,0,0">
-                    <Run Text="Payment Due Date: " Foreground="White" FontWeight="Bold"/>
-                    <Run Text="{Binding InvoiceVM.PaymentDueDate}" Foreground="White" FontWeight="Bold"/>
+                    <Run Text="Payment Date: " Foreground="White" FontWeight="Bold"/>
+                    <Run Text="{Binding InvoiceVM.PaymentDate, StringFormat='{}{0:dd-MM-yyyy}'}" Foreground="White" FontWeight="Bold"/>
                     </TextBlock>
                 </Grid>
 
@@ -226,7 +235,6 @@
                                 VerticalAlignment="Bottom" 
                                 TextBlock.TextAlignment="Center"/>
                     </Grid>
-
                 </Grid>
             </Border>
         </Grid>

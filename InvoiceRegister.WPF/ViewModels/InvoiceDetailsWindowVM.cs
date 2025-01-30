@@ -1,8 +1,10 @@
 ﻿using InvoiceRegister.WPF.Base;
 using InvoiceRegister.WPF.Base.Exceptions;
 using InvoiceRegister.WPF.Interfaces.Repositories;
+using InvoiceRegister.WPF.Interfaces.Services;
 using InvoiceRegister.WPF.Models;
 using Microsoft.Extensions.DependencyInjection;
+using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,6 +22,7 @@ namespace InvoiceRegister.WPF.ViewModels
 	/// - Creating invoice items
 	/// - Deleting invoices
 	/// - Changing invoice payment status + Creating payment entities
+	/// - Generating invoice files
 	/// 
 	/// </summary>
 
@@ -32,12 +35,15 @@ namespace InvoiceRegister.WPF.ViewModels
 		private readonly IInvoiceItemRepository invoiceItemRepository;
 		private readonly IPaymentRepository paymentRepository;
 		private readonly IClientRepository clientRepository;
+		private readonly IPdfService pdfService;
+
 		public InvoiceDetailsWindowVM(IServiceProvider serviceProvider)
 		{
 			this.invoiceRepository = serviceProvider.GetRequiredService<IInvoiceRepository>();
 			this.invoiceItemRepository = serviceProvider.GetRequiredService<IInvoiceItemRepository>();
 			this.paymentRepository = serviceProvider.GetRequiredService<IPaymentRepository>();
 			this.clientRepository = serviceProvider.GetRequiredService<IClientRepository>();
+			this.pdfService = serviceProvider.GetRequiredService<IPdfService>();
 		}
 
 		// Client info
@@ -100,6 +106,18 @@ namespace InvoiceRegister.WPF.ViewModels
 			}
 		}
 
+		// Object to hold generated pdf document
+		private PdfDocument pdfDocument = new PdfDocument();
+		public PdfDocument PdfDocument
+		{
+			get => pdfDocument;
+			set
+			{
+				pdfDocument = value;
+				OnPropertyChanged();
+			}
+		}
+
 		// Initializes window
 		public async Task InitializeAsync(int id)
 		{
@@ -139,6 +157,14 @@ namespace InvoiceRegister.WPF.ViewModels
 		{
 			await paymentRepository.CreatePaymentAsync(this.InvoiceId, NewPaymentDate);
 			await invoiceRepository.ChangeInvoiceStatusAsync(this.InvoiceId);
+		}
+
+		// Generates pdf file
+		public async Task GeneratePdfFileAsync()
+		{
+			var pdfVM = await invoiceRepository.GetPdfVMAsync(this.InvoiceId);
+			PdfDocument = pdfService.GenerateInvoicePdf(pdfVM);
+			PdfDocument.Close();
 		}
 	}
 }

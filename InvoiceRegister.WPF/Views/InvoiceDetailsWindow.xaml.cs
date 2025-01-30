@@ -1,5 +1,6 @@
 ﻿using InvoiceRegister.WPF.Base.Exceptions;
 using InvoiceRegister.WPF.ViewModels;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace InvoiceRegister.WPF.Views
 	/// - Creating invoice items
 	/// - Deleting invoices
 	/// - Changing invoice payment status + Creating payment entities
+	/// - Generating invoice files
 	/// 
 	/// </summary>
 
@@ -104,9 +106,7 @@ namespace InvoiceRegister.WPF.Views
 			}
 
 			// Refresh window and clear errortext on success
-			ErrorText.Text = "";
-			ErrorText.Height = 0;
-
+			HideErrors();
 			await RefreshWindowVM();
 		}
 
@@ -122,6 +122,23 @@ namespace InvoiceRegister.WPF.Views
 		{
 			await invoiceDetailsWindowVM.ChangeInvoiceStatusAsync();
 			await RefreshWindowVM();
+		}
+
+		// Generates pdf file
+		public async void GeneratePDF_Click(object sender, RoutedEventArgs e)
+		{
+			await invoiceDetailsWindowVM.GeneratePdfFileAsync();
+
+			SaveFileDialog saveFileDialog = new SaveFileDialog
+			{
+				Filter = "PDF Files (*.pdf)|*.pdf",
+				FileName = (invoiceDetailsWindowVM.InvoiceVM.InvoiceNumber).Replace("/", "-")
+			};
+
+			if (saveFileDialog.ShowDialog() == true)
+			{
+				invoiceDetailsWindowVM.PdfDocument.Save(saveFileDialog.FileName);
+			}
 		}
 
 		// Method for hiding Id columns in the datagrid
@@ -140,6 +157,7 @@ namespace InvoiceRegister.WPF.Views
 			HideColumns();
 		}
 
+		// Hides all errors
 		private void HideErrors()
 		{
 			ErrorText.Text = "";

@@ -23,6 +23,8 @@ namespace InvoiceRegister.WPF.Models
 
 		// InvoiceItem table data
 		public decimal PriceGross { get; set; }
+		public decimal ValueNet { get; set; }
+		public decimal ValueVAT { get; set; }
 
 		// Client table data
 		public string ClientName { get; set; }

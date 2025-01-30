@@ -73,6 +73,7 @@ namespace InvoiceRegister.WPF
 
 			// Services
 			services.AddScoped<IEmailSenderService, EmailSenderService>(provider => new EmailSenderService(sendGridConnectionString, sendFromEmailAddress));
+			services.AddScoped<IPdfService, PdfService>();
 
 			// Views and ViewModels
 			services.AddScoped<MainWindow>();

@@ -1,4 +1,5 @@
 ﻿using InvoiceRegister.WPF.Models;
+using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace InvoiceRegister.WPF.Interfaces.Services
 {
-    public interface IEmailSenderService
+	public interface IPdfService
 	{
-		// Sends email to all clients with overdue payments
-		Task SendWarningEmailsAsync(List<OverdueInvoiceVM> overdueInvoices);
-    }
+		// Generates invoice 
+		PdfDocument GenerateInvoicePdf(PdfVM pdfVM);
+	}
 }

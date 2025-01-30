@@ -29,10 +29,33 @@ namespace InvoiceRegister.WPF.Repositories
 
 			foreach (var item in invoiceItem)
 			{
-				item.PriceGross = Math.Round((item.Price * item.Amount) * (1m + item.VAT / 100m),2);
+				item.ValueNet = item.Price * item.Amount;
+				item.ValueVAT = Math.Round(item.ValueNet * (item.VAT / 100m), 2);
+				item.PriceGross = item.ValueNet + item.ValueVAT;
 			}
 
 			return invoiceItem;
+		}
+
+		// Get the invoice items, value net and value vat for pdf generating
+		public async Task<(List<InvoiceItemVM> invoiceVMs, decimal valueNet, decimal valueVAT)> GetInvoiceItemsForPdfVM(int invoiceId)
+		{
+			var invoiceItem = mapper.Map<List<InvoiceItemVM>>((await GetAllAsync()).Where(i => i.InvoiceId == invoiceId));
+
+			decimal valueNet = 0m;
+			decimal valueVAT = 0m;
+
+			foreach (var item in invoiceItem)
+			{
+				item.ValueNet = item.Price * item.Amount;
+				item.ValueVAT = Math.Round(item.ValueNet * (item.VAT / 100m), 2);
+				item.PriceGross = item.ValueNet + item.ValueVAT;
+
+				valueNet += item.ValueNet;
+				valueVAT += item.ValueVAT;
+			}
+
+			return (invoiceItem, valueNet, valueVAT);
 		}
 
 		// Creates invoice item
@@ -62,6 +85,7 @@ namespace InvoiceRegister.WPF.Repositories
 			// Creates invoice item on success
 			var invoiceItem = mapper.Map<InvoiceItem>(createInvoiceItemVM);
 			invoiceItem.InvoiceId = invoiceId;
+			invoiceItem.Price = Math.Round(invoiceItem.Price, 2);
 			await AddAsync(invoiceItem);
 		}
 

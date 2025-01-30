@@ -15,5 +15,7 @@ namespace InvoiceRegister.WPF.Models
 		public decimal Price { get; set; }
 		public int VAT { get; set; }
 		public decimal PriceGross { get; set; }
+		public decimal ValueNet { get; set; }
+		public decimal ValueVAT { get; set; }
 	}
 }

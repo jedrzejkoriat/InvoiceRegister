@@ -12,6 +12,7 @@ namespace InvoiceRegister.WPF.ViewModels
 	/// This window handles:
 	/// - Displaying invoice datagrid
 	/// - Filtering invoices
+	/// - Sending emails
 	/// 
 	/// </summary>
 

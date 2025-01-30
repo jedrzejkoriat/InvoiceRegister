@@ -31,5 +31,7 @@ namespace InvoiceRegister.WPF.Interfaces.Repositories
 
 		// Changes payment status of the invoice
 		Task ChangeInvoiceStatusAsync(int id);
+
+		Task<PdfVM> GetPdfVMAsync(int id);
 	}
 }

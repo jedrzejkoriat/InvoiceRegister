@@ -77,3 +77,11 @@ C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceR
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\SendGrid.dll
 C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\StarkbankEcdsa.dll
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\PdfSharp.System.dll
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\PdfSharp.dll
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\de\PdfSharp.Charting.resources.dll
+C:\Users\Jedrulcia\Desktop\Jedrzej\Programowanko\github\InvoiceRegister\InvoiceRegister.WPF\bin\Debug\net8.0-windows\de\PdfSharp.resources.dll

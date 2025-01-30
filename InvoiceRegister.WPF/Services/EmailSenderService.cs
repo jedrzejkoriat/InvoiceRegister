@@ -25,6 +25,7 @@ namespace InvoiceRegister.WPF.Services
 			this.sendFromEmailAddress = sendFromEmailAddress;
 		}
 
+		// Sends email to all clients with overdue payments
 		public async Task SendWarningEmailsAsync(List<OverdueInvoiceVM> overdueInvoices)
 		{
 			var client = new SendGridClient(sendGridConnectionString);

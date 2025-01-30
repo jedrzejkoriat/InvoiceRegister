@@ -69,6 +69,23 @@ namespace InvoiceRegister.WPF.Repositories
 			return invoiceVMs;
 		}
 
+		// Gets PDF view model
+		public async Task<PdfVM> GetPdfVMAsync(int id)
+		{
+			var invoiceVM = mapper.Map<InvoiceVM>(await GetAsync(id));
+			(var invoiceItemVMs, invoiceVM.ValueNet, invoiceVM.ValueVAT) = await invoiceItemRepository.GetInvoiceItemsForPdfVM(id);
+			invoiceVM.PriceGross = invoiceVM.ValueNet + invoiceVM.ValueVAT;
+
+			PdfVM pdfVM = new PdfVM
+			{
+				ClientVM = mapper.Map<ClientVM>(await clientRepository.GetAsync(invoiceVM.ClientId)),
+				IvoiceItemVMs = invoiceItemVMs,
+				InvoiceVM = invoiceVM
+			};
+
+			return pdfVM;
+		}
+
 		// Creates new invoice
 		public async Task CreateInvoiceAsync(CreateInvoiceVM createInvoiceVM)
 		{
