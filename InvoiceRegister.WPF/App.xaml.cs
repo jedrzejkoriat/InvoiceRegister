@@ -9,9 +9,11 @@ using InvoiceRegister.WPF.Services;
 using InvoiceRegister.WPF.ViewModels;
 using InvoiceRegister.WPF.Views;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Windows;
 
 namespace InvoiceRegister.WPF
@@ -34,11 +36,22 @@ namespace InvoiceRegister.WPF
 		// Depencency Injection configuration
 		private IServiceProvider CreateServiceProvider()
 		{
+			// Get the appsettings.json directory
+			var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\"));
+
+			// Get the appsettings.json file path
+			var configFilePath = Path.Combine(projectDirectory, "appsettings.json");
+
+			var configurationBuilder = new ConfigurationBuilder()
+				.SetBasePath(projectDirectory)
+				.AddJsonFile(configFilePath, optional: true, reloadOnChange: true);
+
 			IServiceCollection services = new ServiceCollection();
+			IConfiguration configuration = configurationBuilder.Build();
 
 			// Db context
 			services.AddDbContext<AppDbContext>(options =>
-			options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=InvoiceRegister;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False"));
+				options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
 			// Automapper
 			services.AddAutoMapper(typeof(MapperConfig));
@@ -55,7 +68,7 @@ namespace InvoiceRegister.WPF
 			services.AddScoped<IPaymentRepository, PaymentRepository>();
 
 			// Services
-			services.AddScoped<IOtherServices, OtherServices>();
+			services.AddScoped<IEmailSenderService, EmailSenderService>();
 
 			// Views and ViewModels
 			services.AddScoped<MainWindow>();

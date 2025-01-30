@@ -79,6 +79,12 @@ namespace InvoiceRegister.WPF
 			HideColumns();
 		}
 
+		// Sends email to clients that have overdue payments
+		public async void SendWarningEmails_Click(object sender, RoutedEventArgs e)
+		{
+			await this.mainWindowVM.SendWarningEmailsAsync();
+		}
+
 		// Method for hiding Id columns in the datagrid
 		private void HideColumns()
 		{

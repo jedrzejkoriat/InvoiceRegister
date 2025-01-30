@@ -26,7 +26,7 @@
                 Padding="10"
                 HorizontalAlignment="Stretch" 
                 VerticalAlignment="Stretch">
-        <Grid>
+            <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="40*"/>
                 <ColumnDefinition Width="60*"/>

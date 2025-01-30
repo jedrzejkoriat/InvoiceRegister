@@ -1,5 +1,6 @@
 ﻿using InvoiceRegister.WPF.Base;
 using InvoiceRegister.WPF.Interfaces.Repositories;
+using InvoiceRegister.WPF.Interfaces.Services;
 using InvoiceRegister.WPF.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.ObjectModel;
@@ -17,10 +18,12 @@ namespace InvoiceRegister.WPF.ViewModels
 	public class MainWindowVM : ObservableObject
 	{
 		private readonly IInvoiceRepository invoiceRepository;
+		private readonly IEmailSenderService emailSenderService;
 
 		public MainWindowVM(IServiceProvider serviceProvider)
 		{
 			this.invoiceRepository = serviceProvider.GetRequiredService<IInvoiceRepository>();
+			this.emailSenderService = serviceProvider.GetRequiredService<IEmailSenderService>();
 		}
 
 		// Invoices for datagrid
@@ -64,6 +67,11 @@ namespace InvoiceRegister.WPF.ViewModels
 		public async Task ApplyFilterAsync()
 		{
 			InvoiceVMs = await invoiceRepository.FilterInvoiceVMsAsync(FilterVM);
+		}
+
+		public async Task SendWarningEmailsAsync()
+		{
+			await emailSenderService.SendWarningEmailsAsync();
 		}
 	}
 }

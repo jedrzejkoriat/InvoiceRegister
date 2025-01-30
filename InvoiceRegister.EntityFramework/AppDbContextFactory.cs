@@ -1,12 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using Microsoft.Extensions.Configuration;
 
 namespace InvoiceRegister.EntityFramework
 {
@@ -15,8 +9,20 @@ namespace InvoiceRegister.EntityFramework
 	{
 		public AppDbContext CreateDbContext(string[] args = null)
 		{
+			// Get the appsettings.json directory
+			var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\"));
+
+			// Get the appsettings.json file path
+			var configFilePath = Path.Combine(projectDirectory, "appsettings.json");
+
+			var configuration = new ConfigurationBuilder()
+				.SetBasePath(projectDirectory)
+				.AddJsonFile(configFilePath, optional: true, reloadOnChange: true)
+				.Build();
+
 			DbContextOptionsBuilder<AppDbContext> options = new DbContextOptionsBuilder<AppDbContext>();
-			options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=InvoiceRegister;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False");
+			options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+
 			return new AppDbContext(options.Options);
 		}
 	}

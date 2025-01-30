@@ -56,7 +56,7 @@ namespace InvoiceRegister.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clients");
+                    b.ToTable("Clients", (string)null);
 
                     b.HasData(
                         new
@@ -190,7 +190,7 @@ namespace InvoiceRegister.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Invoices");
+                    b.ToTable("Invoices", (string)null);
                 });
 
             modelBuilder.Entity("InvoiceRegister.EntityFramework.Data.InvoiceItem", b =>
@@ -219,7 +219,7 @@ namespace InvoiceRegister.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("InvoiceItems");
+                    b.ToTable("InvoiceItems", (string)null);
                 });
 
             modelBuilder.Entity("InvoiceRegister.EntityFramework.Data.Payment", b =>
@@ -238,7 +238,7 @@ namespace InvoiceRegister.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 #pragma warning restore 612, 618
         }
