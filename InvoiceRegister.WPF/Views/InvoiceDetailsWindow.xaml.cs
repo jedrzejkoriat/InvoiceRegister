@@ -149,5 +149,5 @@ namespace InvoiceRegister.WPF.Views
 			PriceWarning.Visibility = Visibility.Hidden;
 			VATWarning.Visibility = Visibility.Hidden;
 		}
-	}
+    }
 }

@@ -217,7 +217,7 @@
 
                     <Grid Grid.Column="4" Grid.Row="2">
                         <Button Style="{DynamicResource RoundedButtonStyle}"
-                                Content="Add" 
+                                Content="Add Item" 
                                 Click="AddInvoiceItem_Click"
                                 Width="100" Height="18" 
                                 Background="Green" 
@@ -239,12 +239,15 @@
                 Padding="10"
                 HorizontalAlignment="Stretch" 
                 VerticalAlignment="Stretch">
-                <DataGrid ItemsSource="{Binding InvoiceItemVMs}" x:Name="InvoiceItemsGrid" IsReadOnly="True" Background="{StaticResource BrushPrimaryBackground}">
+                <DataGrid ItemsSource="{Binding InvoiceItemVMs}" x:Name="InvoiceItemsGrid" IsReadOnly="True" Background="{StaticResource BrushSecondaryBackground}" BorderBrush="Transparent">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Header="">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Delete" Click="DeleteInvoiceItem_Click">
+                                    <Button Click="DeleteInvoiceItem_Click">
+                                        <Button.Content>
+                                            <faWPF:FontAwesome Icon="Trash" Foreground="DarkRed" FontWeight="Bold"/>
+                                        </Button.Content>
                                         <Button.Tag>
                                             <Binding Path="Id" />
                                         </Button.Tag>

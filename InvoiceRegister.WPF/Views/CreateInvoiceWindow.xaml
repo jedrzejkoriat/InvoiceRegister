@@ -57,7 +57,7 @@
             <DatePicker SelectedDate="{Binding CreateInvoiceVM.PaymentDueDate, StringFormat=MM/dd/yyyy}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10, 0" BorderBrush="Transparent"/>
 
             <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="" x:Name="ErrorText" Foreground="Red" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="5" Grid.Column="1" Width="100" Height="20" HorizontalAlignment="Right" Margin="0,0,10,0" Content="Add Invoice" Click="CreateInvoice_Click"/>
+            <Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="5" Grid.Column="1" Width="100" Height="20" HorizontalAlignment="Right" Margin="0,0,10,0" Content="Create Invoice" Click="CreateInvoice_Click"/>
         </Grid>
         </Border>
     </Grid>
