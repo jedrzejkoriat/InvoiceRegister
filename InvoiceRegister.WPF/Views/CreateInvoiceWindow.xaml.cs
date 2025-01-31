@@ -39,6 +39,7 @@ namespace InvoiceRegister.WPF.Views
 			// Try creating invoice and display adequate errors on fail
 			try
 			{
+				HideErrors();
 				await this.createInvoiceWindowVM.CreateInvoice();
 			}
 			catch (InvoiceNIPException ex)
@@ -61,6 +62,13 @@ namespace InvoiceRegister.WPF.Views
 
 			// Close window on success
 			this.Close();
+		}
+
+		private void HideErrors()
+		{
+			ErrorText.Text = "";
+			NumberWarning.Visibility = Visibility.Hidden;
+			NIPWarning.Visibility = Visibility.Hidden;
 		}
 	}
 }

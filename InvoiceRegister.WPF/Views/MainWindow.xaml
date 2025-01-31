@@ -87,9 +87,9 @@
                     <CheckBox IsChecked="{Binding FilterVM.OverduePaymentToggle}" VerticalAlignment="Top"  HorizontalAlignment="Left"/>
                 </Grid>
 
-                <Button Grid.Column="7" Style="{DynamicResource RoundedButtonStyle}" Content="Fliter Results" VerticalAlignment="Center" Height="20" Width="120" Click="Filter_Click" />
-                <Button Grid.Column="8" Style="{DynamicResource RoundedButtonStyle}" Content="Create Invoice" VerticalAlignment="Center" Height="20" Width="120" Click="OpenInvoiceCreate_Click"/>
-                <Button Grid.Column="9" Style="{DynamicResource RoundedButtonStyle}" Content="Send Warning Emails" VerticalAlignment="Center" Height="20" Width="120" Click="SendWarningEmails_Click"/>
+                <Button Grid.Column="7" Style="{DynamicResource RoundedButtonStyle}" FontWeight="Bold" Content="Fliter Results" VerticalAlignment="Center" Height="20" Width="120" Click="Filter_Click" />
+                <Button Grid.Column="8" Style="{DynamicResource RoundedButtonStyle}" FontWeight="Bold" Content="Create Invoice" VerticalAlignment="Center" Height="20" Width="120" Click="OpenInvoiceCreate_Click"/>
+                <Button Grid.Column="9" Style="{DynamicResource RoundedButtonStyle}" FontWeight="Bold" Content="Send Warning Emails" VerticalAlignment="Center" Height="20" Width="120" Click="SendWarningEmails_Click"/>
             </Grid>
         </Border>
 

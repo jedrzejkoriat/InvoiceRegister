@@ -65,10 +65,25 @@
                             </Style>
                         </Grid.Resources>
 
-                        <Button Style="{DynamicResource RoundedButtonStyle}" Content="Invoice Paid" Foreground="White" Background="Green" Padding="3" FontWeight="Bold"
-                                Width="100" Height="20" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                        <Button Style="{DynamicResource RoundedButtonStyle}" 
+                                Content="Invoice Paid" 
+                                Foreground="White" 
+                                Background="Green" 
+                                Padding="3" 
+                                FontWeight="Bold"
+                                Width="100"
+                                Height="20"
+                                Margin="0,10,0,0" 
+                                VerticalAlignment="Top"/>
                         <StackPanel>
-                            <Button Style="{DynamicResource RoundedButtonStyle}" Content="Change Status" Click="ChangeStatus_Click" Width="100" Height="20" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                            <Button Style="{DynamicResource RoundedButtonStyle}" 
+                                    Content="Change Status" 
+                                    Click="ChangeStatus_Click" 
+                                    Width="100" 
+                                    Height="20" 
+                                    Margin="0,10,0,0" 
+                                    VerticalAlignment="Top"
+                                    FontWeight="Bold"/>
                             <DatePicker SelectedDate="{Binding NewPaymentDate}" Margin="0,10,0,0" Width="100" VerticalAlignment="Top"/>
                         </StackPanel>
                     </Grid>
@@ -79,7 +94,7 @@
                                 Content="Generate Invoice" 
                                 Click="GeneratePDF_Click"
                                 Width="100"
-                                Height="18"
+                                Height="20"
                                 FontWeight="Bold"
                                 Margin="0,0,0,30"
                                 VerticalAlignment="Bottom" 
@@ -88,7 +103,7 @@
                                 Content="Delete Invoice" 
                                 Click="DeleteInvoice_Click"
                                 Width="100"
-                                Height="18"
+                                Height="20"
                                 Background="Red" 
                                 Foreground="White" 
                                 FontWeight="Bold"
@@ -228,7 +243,7 @@
                         <Button Style="{DynamicResource RoundedButtonStyle}"
                                 Content="Add Item" 
                                 Click="AddInvoiceItem_Click"
-                                Width="100" Height="18" 
+                                Width="100" Height="20" 
                                 Background="Green" 
                                 Foreground="White"
                                 FontWeight="Bold"

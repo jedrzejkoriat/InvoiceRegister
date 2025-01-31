@@ -131,7 +131,7 @@ namespace InvoiceRegister.WPF.Repositories
 			if (filterVM.ToDateToggle) filteredInvoices = filteredInvoices.Where(i => i.IssueDate <= filterVM.ToDate);
 			if (filterVM.MinPriceToggle) filteredInvoices = filteredInvoices.Where(i => i.PriceGross >= filterVM.MinPrice);
 			if (filterVM.MaxPriceToggle) filteredInvoices = filteredInvoices.Where(i => i.PriceGross <= filterVM.MaxPrice);
-			if (filterVM.ClientNameToggle) filteredInvoices = filteredInvoices.Where(i => i.ClientName.Contains(filterVM.ClientName));
+			if (filterVM.ClientNameToggle) filteredInvoices = filteredInvoices.Where(i => i.ClientName.ToLower().Contains(filterVM.ClientName.ToLower()));
 			if (filterVM.ClientNIPToggle) filteredInvoices = filteredInvoices.Where(i => i.ClientNIP == filterVM.ClientNIP);
 			if (filterVM.OverduePaymentToggle) filteredInvoices = filteredInvoices.Where(i => i.PaymentDate == null && i.PaymentDueDate < DateTime.UtcNow);
 
