@@ -40,7 +40,11 @@ namespace InvoiceRegister.WPF.Services
 				var sendTo = new EmailAddress(email);
 
 				var message = MailHelper.CreateSingleEmail(sendFrom, sendTo, subject, "", htmlMessage);
-				var response = await client.SendEmailAsync(message);
+				try
+				{
+					var response = await client.SendEmailAsync(message);
+				}
+				catch { }
 			}
 
 		}
