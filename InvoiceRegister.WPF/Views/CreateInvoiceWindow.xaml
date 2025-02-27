@@ -40,15 +40,15 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Invoice Number" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Numer faktury" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
             <faWPF:FontAwesome  Grid.Row="0" Grid.Column="0" Visibility="Hidden" Icon="ExclamationCircle" Foreground="Red" Width="20" Height="20" 
                            VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,10,0,0" x:Name="NumberWarning"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="Client NIP" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="NIP" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
             <faWPF:FontAwesome Grid.Row="1" Grid.Column="0" Visibility="Hidden" Icon="ExclamationCircle" Foreground="Red" Width="20" Height="20" 
                            VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,10,0,0" x:Name="NIPWarning"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Issue Date" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
-            <TextBlock Grid.Row="3" Grid.Column="0" Text="Sale Date" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
-            <TextBlock Grid.Row="4" Grid.Column="0" Text="Payment due Date" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Data wystawienia" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Data sprzedaży" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Termin płatności" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
 
             <TextBox Text="{Binding CreateInvoiceVM.InvoiceNumber}"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10,0" BorderBrush="Transparent"/>
             <TextBox Text="{Binding CreateInvoiceVM.ClientNIP}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10,0" BorderBrush="Transparent"/>
@@ -57,7 +57,7 @@
             <DatePicker SelectedDate="{Binding CreateInvoiceVM.PaymentDueDate, StringFormat=MM/dd/yyyy}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10, 0" BorderBrush="Transparent"/>
 
             <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="" x:Name="ErrorText" Foreground="Red" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="5" Grid.Column="1" Width="100" Height="20" HorizontalAlignment="Right" Margin="0,0,10,0" Content="Create Invoice" Click="CreateInvoice_Click"/>
+            <Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="5" Grid.Column="1" Width="100" Height="20" HorizontalAlignment="Right" Margin="0,0,10,0" Content="Stwórz fakturę" Click="CreateInvoice_Click"/>
         </Grid>
         </Border>
     </Grid>

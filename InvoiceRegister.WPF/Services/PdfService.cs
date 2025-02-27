@@ -20,7 +20,7 @@ namespace InvoiceRegister.WPF.Services
 		{
 			// Document
 			PdfDocument document = new PdfDocument();
-			document.Info.Title = "Invoice";
+			document.Info.Title = "Faktura";
 			PdfPage strona = document.AddPage();
 
 			// Graphics
@@ -39,20 +39,20 @@ namespace InvoiceRegister.WPF.Services
 			int currentPositionY = marginTop;
 
 			// Invoice header
-			graphics.DrawString($"Invoice No.: {pdfVM.InvoiceVM.InvoiceNumber}", fontHeader, XBrushes.Black, marginLeft, marginTop);
-			graphics.DrawString($"Issue date: {pdfVM.InvoiceVM.IssueDate.ToString("dd-MM-yyyy")}", font, XBrushes.Black, marginLeft, marginTop + 20);
-			graphics.DrawString($"Sale date: {pdfVM.InvoiceVM.SaleDate.ToString("dd-MM-yyyy")}", font, XBrushes.Black, marginLeft, marginTop + 40);
+			graphics.DrawString($"Faktura nr: {pdfVM.InvoiceVM.InvoiceNumber}", fontHeader, XBrushes.Black, marginLeft, marginTop);
+			graphics.DrawString($"Data wystawienia: {pdfVM.InvoiceVM.IssueDate.ToString("dd-MM-yyyy")}", font, XBrushes.Black, marginLeft, marginTop + 20);
+			graphics.DrawString($"Data sprzedaży: {pdfVM.InvoiceVM.SaleDate.ToString("dd-MM-yyyy")}", font, XBrushes.Black, marginLeft, marginTop + 40);
 
 			// Seller/Buyer section header
 			currentPositionY += 100;
 
-			graphics.DrawString("Seller", fontHeader, XBrushes.Black, marginLeft, currentPositionY);
-			graphics.DrawString("Buyer", fontHeader, XBrushes.Black, marginLeft + 300, currentPositionY);
+			graphics.DrawString("Sprzedający", fontHeader, XBrushes.Black, marginLeft, currentPositionY);
+			graphics.DrawString("Kupujący", fontHeader, XBrushes.Black, marginLeft + 300, currentPositionY);
 
 			// Seller/Buyer section content
 			currentPositionY += 20;
 
-			graphics.DrawString($"COMPANY XYZ", font, XBrushes.Black, marginLeft, currentPositionY);
+			graphics.DrawString($"Firma XYZ", font, XBrushes.Black, marginLeft, currentPositionY);
 			graphics.DrawString($"{pdfVM.ClientVM.Name}", font, XBrushes.Black, marginLeft + 300, currentPositionY);
 
 			graphics.DrawString($"aleje Jerozolimskie 123", font, XBrushes.Black, marginLeft, currentPositionY + 20);
@@ -67,14 +67,14 @@ namespace InvoiceRegister.WPF.Services
 			// Table with invoice items (header)
 			currentPositionY += 120;
 
-			graphics.DrawString("No.", fontTable, XBrushes.Black, marginLeft, currentPositionY);
-			graphics.DrawString("Name", fontTable, XBrushes.Black, marginLeft + 40, currentPositionY);
-			graphics.DrawString("Amount", fontTable, XBrushes.Black, marginLeft + 120, currentPositionY);
-			graphics.DrawString("Net price", fontTable, XBrushes.Black, marginLeft + 180, currentPositionY);
-			graphics.DrawString("Net value", fontTable, XBrushes.Black, marginLeft + 250, currentPositionY);
+			graphics.DrawString("Nr", fontTable, XBrushes.Black, marginLeft, currentPositionY);
+			graphics.DrawString("Nazwa", fontTable, XBrushes.Black, marginLeft + 40, currentPositionY);
+			graphics.DrawString("Ilość", fontTable, XBrushes.Black, marginLeft + 120, currentPositionY);
+			graphics.DrawString("Cena netto", fontTable, XBrushes.Black, marginLeft + 180, currentPositionY);
+			graphics.DrawString("Wartość netto", fontTable, XBrushes.Black, marginLeft + 250, currentPositionY);
 			graphics.DrawString("VAT", fontTable, XBrushes.Black, marginLeft + 330, currentPositionY);
-			graphics.DrawString("VAT value", fontTable, XBrushes.Black, marginLeft + 380, currentPositionY);
-			graphics.DrawString("Gross value", fontTable, XBrushes.Black, marginLeft + 450, currentPositionY);
+			graphics.DrawString("Wartość VAT", fontTable, XBrushes.Black, marginLeft + 380, currentPositionY);
+			graphics.DrawString("Wartość brutto", fontTable, XBrushes.Black, marginLeft + 450, currentPositionY);
 
 			graphics.DrawRectangle(new XPen(XColors.Black), marginLeft - 5, currentPositionY - 15, 540, 20);
 
@@ -98,29 +98,29 @@ namespace InvoiceRegister.WPF.Services
 			// Summary header
 			currentPositionY += 10;
 
-			graphics.DrawString("Summary", fontHeader, XBrushes.Black, marginLeft + 400, currentPositionY);
+			graphics.DrawString("Podsumowanie", fontHeader, XBrushes.Black, marginLeft + 400, currentPositionY);
 
 			// Summary content
 			currentPositionY += 20;
 
-			graphics.DrawString($"Value net: {pdfVM.InvoiceVM.ValueNet}", font, XBrushes.Black, marginLeft + 400, currentPositionY);
-			graphics.DrawString($"Value VAT: {pdfVM.InvoiceVM.ValueVAT}", font, XBrushes.Black, marginLeft + 400, currentPositionY + 20);
-			graphics.DrawString($"Value gross: {pdfVM.InvoiceVM.PriceGross}", font, XBrushes.Black, marginLeft + 400, currentPositionY + 40);
+			graphics.DrawString($"Wartość netto: {pdfVM.InvoiceVM.ValueNet}", font, XBrushes.Black, marginLeft + 400, currentPositionY);
+			graphics.DrawString($"Wartość VAT: {pdfVM.InvoiceVM.ValueVAT}", font, XBrushes.Black, marginLeft + 400, currentPositionY + 20);
+			graphics.DrawString($"Wartość brutto: {pdfVM.InvoiceVM.PriceGross}", font, XBrushes.Black, marginLeft + 400, currentPositionY + 40);
 
 			currentPositionY += 60;
-			graphics.DrawString($"Total amount: {pdfVM.InvoiceVM.PriceGross}", fontHeader, XBrushes.Black, marginLeft, currentPositionY);
+			graphics.DrawString($"Całkowita kwota: {pdfVM.InvoiceVM.PriceGross}", fontHeader, XBrushes.Black, marginLeft, currentPositionY);
 
 			// Payment details section
 			currentPositionY = 670;
-			graphics.DrawString("Payment due date", font, XBrushes.Black, marginLeft, currentPositionY);
+			graphics.DrawString("Termin płatności", font, XBrushes.Black, marginLeft, currentPositionY);
 			graphics.DrawString($"{pdfVM.InvoiceVM.PaymentDueDate.ToString("dd-MM-yyyy")}", font, XBrushes.Black, marginLeft + 100, currentPositionY);
 
 			currentPositionY += 20;
-			graphics.DrawString("Payment method", font, XBrushes.Black, marginLeft, currentPositionY);
-			graphics.DrawString("Transfer", font, XBrushes.Black, marginLeft + 100, currentPositionY);
+			graphics.DrawString("Sposób płatności", font, XBrushes.Black, marginLeft, currentPositionY);
+			graphics.DrawString("Przelew", font, XBrushes.Black, marginLeft + 100, currentPositionY);
 
 			currentPositionY += 20;
-			graphics.DrawString("Account number", font, XBrushes.Black, marginLeft, currentPositionY);
+			graphics.DrawString("Numer konta", font, XBrushes.Black, marginLeft, currentPositionY);
 			graphics.DrawString("PL 00 1111 2222 3333 4444 5555 6666", font, XBrushes.Black, marginLeft + 100, currentPositionY);
 
 			currentPositionY += 20;
@@ -134,8 +134,8 @@ namespace InvoiceRegister.WPF.Services
 
 			currentPositionY += 10;
 
-			graphics.DrawString("Person authorized to issue", font, XBrushes.Black, marginLeft + 50, currentPositionY);
-			graphics.DrawString("Person authorized to collect", font, XBrushes.Black, marginLeft + 360, currentPositionY);
+			graphics.DrawString("Osoba upoważniona do sprzedaży", font, XBrushes.Black, marginLeft + 30, currentPositionY);
+			graphics.DrawString("Osoba upoważniona do kupna", font, XBrushes.Black, marginLeft + 350, currentPositionY);
 
 			// Document saving
 			return document;

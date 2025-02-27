@@ -47,25 +47,25 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid Grid.Column="0">
-                    <TextBlock VerticalAlignment="Top" Text="From date" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
+                    <TextBlock VerticalAlignment="Top" Text="Od" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
                     <DatePicker SelectedDate="{Binding FilterVM.FromDate, StringFormat=MM/dd/yyyy}" Height="25" Width="auto"  VerticalAlignment="Bottom" BorderBrush="Transparent"/>
                     <CheckBox IsChecked="{Binding FilterVM.FromDateToggle}" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 </Grid>
                 
                 <Grid Grid.Column="1">
-                    <TextBlock VerticalAlignment="Top" Text="To date" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
+                    <TextBlock VerticalAlignment="Top" Text="Do" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
                     <DatePicker SelectedDate="{Binding FilterVM.ToDate, StringFormat=MM/dd/yyyy}" Height="25" Width="auto"  VerticalAlignment="Bottom" BorderBrush="Transparent"/>
                     <CheckBox IsChecked="{Binding FilterVM.ToDateToggle}" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 </Grid>
 
                 <Grid Grid.Column="2" >
-                    <TextBlock VerticalAlignment="Top" Text="Min Price" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
+                    <TextBlock VerticalAlignment="Top" Text="Minimalna cena" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
                     <TextBox Text="{Binding FilterVM.MinPrice}" Height="20" Width="auto"  VerticalAlignment="Bottom" BorderBrush="Transparent"/>
                     <CheckBox IsChecked="{Binding FilterVM.MinPriceToggle}" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 </Grid>
 
                 <Grid Grid.Column="3">
-                    <TextBlock VerticalAlignment="Top" Text="Max Price" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
+                    <TextBlock VerticalAlignment="Top" Text="Maksymalna cena" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
                     <TextBox Text="{Binding FilterVM.MaxPrice}" Height="20" Width="auto"  VerticalAlignment="Bottom" BorderBrush="Transparent"/>
                     <CheckBox IsChecked="{Binding FilterVM.MaxPriceToggle}" VerticalAlignment="Top"  HorizontalAlignment="Left"/>
                 </Grid>
@@ -77,19 +77,19 @@
                 </Grid>
 
                 <Grid Grid.Column="5">
-                    <TextBlock VerticalAlignment="Top" Text="Company Name" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
+                    <TextBlock VerticalAlignment="Top" Text="Nazwa firmy" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
                     <TextBox Text="{Binding FilterVM.ClientName}" Height="20" Width="auto"  VerticalAlignment="Bottom" BorderBrush="Transparent"/>
                     <CheckBox IsChecked="{Binding FilterVM.ClientNameToggle}" VerticalAlignment="Top"   HorizontalAlignment="Left"/>
                 </Grid>
 
                 <Grid Grid.Column="6">
-                    <TextBlock VerticalAlignment="Top" Text="Overdue Payments" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
+                    <TextBlock VerticalAlignment="Top" Text="Zalegające płatności" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
                     <CheckBox IsChecked="{Binding FilterVM.OverduePaymentToggle}" VerticalAlignment="Top"  HorizontalAlignment="Left"/>
                 </Grid>
 
-                <Button Grid.Column="7" Style="{DynamicResource RoundedButtonStyle}" FontWeight="Bold" Content="Fliter Results" VerticalAlignment="Center" Height="20" Width="120" Click="Filter_Click" />
-                <Button Grid.Column="8" Style="{DynamicResource RoundedButtonStyle}" FontWeight="Bold" Content="Create Invoice" VerticalAlignment="Center" Height="20" Width="120" Click="OpenInvoiceCreate_Click"/>
-                <Button Grid.Column="9" Style="{DynamicResource RoundedButtonStyle}" FontWeight="Bold" Content="Send Warning Emails" VerticalAlignment="Center" Height="20" Width="120" Click="SendWarningEmails_Click"/>
+                <Button Grid.Column="7" Style="{DynamicResource RoundedButtonStyle}" FontWeight="Bold" Content="Filtruj wyniki" VerticalAlignment="Center" Height="20" Width="120" Click="Filter_Click" />
+                <Button Grid.Column="8" Style="{DynamicResource RoundedButtonStyle}" FontWeight="Bold" Content="Stwórz fakturę" VerticalAlignment="Center" Height="20" Width="120" Click="OpenInvoiceCreate_Click"/>
+                <Button Grid.Column="9" Style="{DynamicResource RoundedButtonStyle}" FontWeight="Bold" Content="Wyślij ostrzeżenie" VerticalAlignment="Center" Height="20" Width="120" Click="SendWarningEmails_Click"/>
             </Grid>
         </Border>
 
@@ -118,14 +118,14 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="Invoice Number" Binding="{Binding InvoiceNumber}" Width="10*"/>
-                        <DataGridTextColumn Header="Price Gross" Binding="{Binding PriceGross}" Width="10*"/>
-                        <DataGridTextColumn Header="Issue Date" Binding="{Binding IssueDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="10*"/>
-                        <DataGridTextColumn Header="Sale Date" Binding="{Binding SaleDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="10*"/>
-                        <DataGridTextColumn Header="Payment Due Date" Binding="{Binding PaymentDueDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="10*"/>
-                        <DataGridTextColumn Header="Payment Status" Binding="{Binding IsPaid}" Width="10*"/>
-                        <DataGridTextColumn Header="Payment Date" Binding="{Binding PaymentDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="10*"/>
-                        <DataGridTextColumn Header="Client" Binding="{Binding ClientName}" Width="10*"/>
+                        <DataGridTextColumn Header="Number faktury" Binding="{Binding InvoiceNumber}" Width="10*"/>
+                        <DataGridTextColumn Header="Cena brutto" Binding="{Binding PriceGross}" Width="10*"/>
+                        <DataGridTextColumn Header="Data wystawienia" Binding="{Binding IssueDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="10*"/>
+                        <DataGridTextColumn Header="Data sprzedaży" Binding="{Binding SaleDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="10*"/>
+                        <DataGridTextColumn Header="Termin płatności" Binding="{Binding PaymentDueDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="10*"/>
+                        <DataGridTextColumn Header="Status płatności" Binding="{Binding IsPaid}" Width="10*"/>
+                        <DataGridTextColumn Header="Data płatności" Binding="{Binding PaymentDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="10*"/>
+                        <DataGridTextColumn Header="Nazwa" Binding="{Binding ClientName}" Width="10*"/>
                         <DataGridTextColumn Header="NIP" Binding="{Binding ClientNIP}" Width="10*"/>
                     </DataGrid.Columns>
                 </DataGrid>
